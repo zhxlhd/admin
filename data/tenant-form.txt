@@ -1,0 +1,57 @@
+{
+  "mate" : {
+    	"values": {
+        "name": "sss",
+        "account": "s13@qq.com",
+        "password": "",
+        "mobile": "",
+        "address":"",
+        "logo":""
+      },
+  		"fields" : [
+    		{
+    			"holder"      :"text",
+    			"name"        :"name",
+    			"label"       :"名称",
+    			"placeholder" :"请输入租户名称"
+    		},
+    		{
+    			"holder"      :"text",
+    			"name"        :"account",
+    			"label"       :"账号",
+    			"placeholder" :"请选择所属栏目"
+    		},
+        {
+          "holder"      :"password",
+          "name"        :"password",
+          "label"       :"密码"
+        },
+        {
+          "holder"      :"text",
+          "name"        :"mobile",
+          "label"       :"手机号码"
+        },
+        {
+          "holder"      :"text",
+          "name"        :"address",
+          "label"       :"地址"
+        },
+        {
+          "holder"      :"text",
+          "name"        :"logo",
+          "label"       :"公司logo"
+        }
+  	  ],
+  	  "rules": {
+  	    "name": [
+  	      { "required": true, "message": "请输入租户名称", "trigger": "blur" },
+  	      { "min": 3, "max": 20, "message": "长度在 3 到 20 个字符", "trigger": "blur" }
+  	    ]
+  	  },
+      "labelWidth" :"100px",
+      "next": "/data/tenant.txt",
+      "url" : "/post"
+  },
+  "title" : "新增租户",
+  "view" : "Formor"
+}

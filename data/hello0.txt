@@ -1,0 +1,40 @@
+{
+  "name":"智能仓储云平台",
+	"menus": [
+		{
+			"index" : "1",  "name" : "文章中心",
+			"children" : [
+				{
+					"index" : "1",  "name" : "栏目AA","url":"/data/table.txt"
+				},{
+					"index" : "2",  "name" : "栏目BB","url":"/data/form.txt"
+				},{
+					"index" : "3",  "name" : "栏目CC","url":"/data/user.txt"
+				}
+			]
+		},{
+			"index" : "2",  "name" : "栏目管理",
+			"children" : [
+				{
+					"index" : "1",  "name" : "增加栏目","url":"/data/treeAA.txt"
+				},{
+					"index" : "2",  "name" : "栏目设置","url":"/data/table.txt"
+				}
+			]
+		},{
+			"index" : "3",  "name" : "用户中心",
+			"children" : [
+				{
+					"index" : "1",  "name" : "权限管理"
+				},{
+					"index" : "2",  "name" : "角色管理"
+				},{
+					"index" : "3",  "name" : "用户管理"
+				}
+			]
+		},{
+			"index" : "4",  "name" : "订单管理"
+		}
+	],
+	"current": 1
+}

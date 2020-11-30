@@ -1,0 +1,151 @@
+// 组织架构、架构角色模块样式
+
+.organizational-role{
+  *{
+    box-sizing: border-box;
+  }
+  tbody tr{
+    cursor: pointer;
+  }
+  .el-tree-node__expand-icon{
+    font-size: 20px;
+  }
+  .searchbox{
+    padding: 22px 10px 10px 10px;
+  }
+  .tree_box /deep/ .el-tree{
+    background: transparent;
+  }
+  .tree_box /deep/ .el-tree-node > .el-tree-node__content {
+    height: 40px;
+    font-size: 14px;
+    &:hover{
+      background-color: #eee;
+    }
+  }
+  .tree_box /deep/ .el-tree-node.is-current > .el-tree-node__content {
+    &:hover{
+      background-color: #0089FF;
+    }
+  }
+  .tree_box{
+    .title_btn{
+      width: 100%;
+      padding: 0 10px;
+      margin-bottom: 15px;
+      button{
+        width: 100%;
+        // background: #0089FF;
+      }
+    }
+  }
+  .el-tree--highlight-current .el-tree-node.is-current>.el-tree-node__content{
+    background-color: #0089FF;
+    color: #fff;
+  }
+  ._title{
+    width: 100%;
+    font-size: 20px;
+    &._title_2{
+      padding: 19px 0px;
+      i{
+        margin-right: 8px;
+      }
+    }
+  }
+  .btn_box{
+    width: 100%;
+    padding: 0px 15px;
+    min-height: 38px;
+    background: #eceff4;
+    line-height: 38px;
+  }
+  .nonSubDeptTips{
+    text-align: center;
+  }
+  .pull-right{
+    float: right;
+    margin-top: 4px;
+  }
+  .subDept_table /deep/ td{
+    padding-left: 15px;
+    padding-right: 15px;
+    .cell{
+      position: relative;
+    }
+    .el-icon-arrow-right{
+      position: absolute;
+      right: 0;
+      top: 0;
+      transform: translateY(50%);
+    }
+  }
+  /deep/ .el-tree-node__content {
+    line-height: 33px;
+    height: 33px;
+    position: relative;
+    border-bottom: none
+  }
+}
+.org-drawer{
+  .el-drawer__header{
+    font-size: 20px;
+    margin-bottom: 0;
+    padding-bottom: 20px; 
+  }
+  .drawer__content {
+    display: flex;
+    flex-direction: column;
+    height: calc(100% - 40px);
+    overflow: auto;
+    padding-bottom: 15px;
+  }
+  .drawer__content form {
+    flex: 1;
+  }
+  .drawer__footer {
+    display: flex;
+    align-self: flex-end;
+  }
+  .drawer__footer button {
+      flex: 1;
+  }
+  .content_title{
+    padding: 0px 15px;
+    min-height: 38px;
+    background: #eceff4;
+    line-height: 38px;
+  }
+}
+.app-breadcrumb.el-breadcrumb {
+  display: inline-block;
+  font-size: 14px;
+  line-height: 50px;
+  margin-left: 8px;
+
+  .no-redirect {
+    color: #97a8be;
+    cursor: text;
+  }
+}
+.el-input,.el-cascader,.el-date-editor.el-input,.el-select,.el-input-number{
+  width: 100%;
+}
+.el-input-number .el-input__inner{
+  text-align: left;
+}
+[v-cloak]{display:none}
+// .tree_box /deep/ .el-tabs__content{
+//   max-height: 450px;
+//   overflow-y: auto;
+// }
+.el-button{
+  .org-refresh{
+    visibility: hidden;
+  }
+  &:hover{
+    .org-refresh{
+      visibility: visible;
+    }
+  }
+}

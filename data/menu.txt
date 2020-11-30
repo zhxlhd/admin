@@ -1,0 +1,142 @@
+﻿{
+  "mate" : {
+     "columns" : [
+      {
+        "label":"链接",
+        "name" :"path",
+        "span":4
+      },
+      {
+        "label":"排序",
+        "name" :"order",
+        "span":4
+      },
+      {
+        "label":"可见",
+        "name" :"display",
+        "span":4
+      }
+    ],
+    "rows": [
+    {
+        "id": 1,
+        "label": "基础数据",
+        "path":"/data/table.txt",
+        "order":10,
+        "display":"1",
+        "children": [
+            {
+                "id": 11,
+                "label": "物料管理",
+                "path":"/api/goods",
+                "order":10,
+                "display":"1",
+                "children": [
+                    {
+                        "id": 21,
+                        "label": "新增",
+                        "path":"/data/menu-form.txt",
+                        "order":10,
+                        "display":"1"
+                    },
+                    {
+                        "id": 22,
+                        "label": "修改",
+                        "path":"/data/menu-form.txt",
+                        "order":20,
+                        "display":"1"
+                    },
+                    {
+                        "id": 23,
+                        "label": "删除",
+                        "path":"http://localhost:3000/menus",
+                        "method":"DELETE",
+                        "order":20,
+                        "display":"1"
+                    }
+                ]
+            },
+            {
+                "id": 11,
+                "label": "仓库管理",
+                "path":"GET /api/dc",
+                "order":10,
+                "display":"1",
+                "children": [
+                    {
+                        "id": 21,
+                        "label": "新增",
+                        "path":"POST /api/dc",
+                        "order":10,
+                        "display":"1"
+                    },
+                    {
+                        "id": 22,
+                        "label": "修改",
+                        "path":"POST /api/dc/:id",
+                        "order":20,
+                        "display":"1"
+                    },
+                    {
+                        "id": 23,
+                        "label": "删除",
+                        "path":"DELETE /api/dc/:id",
+                        "order":20,
+                        "display":"1"
+                    }
+                ]
+            }
+        ]
+    }
+],
+    "btns" :[
+        {
+        "action"   : "add",
+        "url"      : "/data/menu-form.txt",
+        "label"    : "增加菜单",
+        "type"     : "success",
+        "isApi"    : false,
+        "useId"    : -1
+      }
+    ],
+    "actions":[
+      {
+        "action"   :"update",
+        "url"      : "/data/menu-form.txt",
+        "label"    : "修改",
+        "type"     : "",
+        "isApi"    : false,
+        "useId"    : 0
+      },
+      {
+        "action"   :"delete",
+        "confirm"  : {
+          "msg"    : "确定删除选中数据？"
+        },
+        "label"    : "删除",
+        "url"      : "http://localhost:3000/menus",
+        "method"   : "DELETE",
+        "type"     : "",
+        "isApi"    : true,
+        "useId"    : 0,
+        "canDisable"  : true,
+        "disableKey"   : "num"
+      },
+      {
+        "action"    :"addChild",
+        "url"       : "/data/form.txt",
+        "label"     : "添加下级菜单",
+        "type"      : "",
+        "isApi"     : false,
+        "useId"     : 0
+      }
+    ],
+    "dataApi" : "/data/menu-form.txt",
+    "page"    : 1,
+    "total"   : 40,
+    "view"    : "tree",
+    "treeTitle":"菜单名称"
+  },
+  "title": "菜单管理",
+  "view" : "KTreer"
+}

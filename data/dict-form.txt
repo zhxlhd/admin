@@ -1,0 +1,64 @@
+{
+  "mate" : {
+    	"values": {
+        "key": "",
+        "label": "",
+        "subtype": "",
+        "desc": "",
+        "order": "10",
+        "remark": ""
+      },
+  		"fields" : [
+    		{
+       "holder"      :"text",
+       "name"        :"key",
+       "label"       :"键值",
+       "placeholder" :""
+      },
+      {
+       "holder"      :"text",
+       "name"        :"label",
+       "label"       :"标签",
+       "placeholder" :""
+      },
+      {
+       "holder"      :"text",
+       "name"        :"type",
+       "label"       :"类型",
+       "placeholder" :""
+      },
+      {
+       "holder"      :"text",
+       "name"        :"desc",
+       "label"       :"描述",
+       "placeholder" :""
+      },
+      {
+       "holder"      :"text",
+       "name"        :"order",
+       "label"       :"排序",
+       "placeholder" :""
+      },
+      {
+       "holder"      :"textarea",
+       "name"        :"desc",
+       "label"       :"备注",
+       "placeholder" :""
+      }
+  	  ],
+  	  "rules": {
+  	    "label": [
+  	      { "required": true, "message": "请输入字典名称", "trigger": "blur" },
+  	      { "min": 3, "max": 20, "message": "长度在 3 到 20 个字符", "trigger": "blur" }
+  	    ],
+  	    "category": [],
+  	    "subject":  [],
+  	    "content":  []
+  	  },
+      "labelWidth" :"100px",
+      "next": "/data/dict.txt",
+      "url" : "/post"
+  },
+  "title" : "新增字典",
+  "view" : "Formor"
+}

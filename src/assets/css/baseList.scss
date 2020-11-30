@@ -1,0 +1,53 @@
+
+.el-form--inline .el-form-item {
+  margin-bottom: 0;
+}
+.el-table .cell,
+.el-table th > div {
+  padding-right: 0;
+  /* padding-left: 25px; */
+}
+.el-form-item {
+  margin: 22px 20px 2px 0;
+}
+.invyTagbtn {
+  margin-top: 20px;
+}
+.chain {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  background: url("../../assets/imgs/ztree/ic_chain.png") no-repeat;
+  transform: translateY(3px);
+}
+.el-tag {
+  background-color: rgba(64, 158, 255, 0.1);
+  padding: 0 10px;
+  height: 32px;
+  line-height: 30px;
+  font-size: 12px;
+  margin-left: -23px;
+  color: #409eff;
+  border-radius: 4px;
+  box-sizing: border-box;
+  border: 1px solid rgba(64, 158, 255, 0.2);
+}
+.el-table td,
+.el-table th {
+  height: 30px;
+}
+.el-dialog__body{
+  padding-top: 0px;
+}
+.el-table .cell.el-tooltip{
+  padding-right: 10px;
+}
+.el-input.edit-input .el-input__inner {
+  padding-right: 15px;
+}
+#main_table .edit-input{
+  width: 100%;
+}
+.el-input-number.is-without-controls .el-input__inner{
+  text-align: left;
+}

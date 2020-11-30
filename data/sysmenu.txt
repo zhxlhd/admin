@@ -1,0 +1,136 @@
+{
+  "title":"SAAS云平台",
+	"logo":"",
+	"menus": [
+		{
+			"index" : "sys",  "name" : "系统配置","iconCls": "el-icon-setting",
+			"children" : [
+				{
+					"index" : "EE",  "name" : "菜单管理", "path":"","url":"http://127.0.0.1:8087/menus/tree"
+				},
+				{
+					"index" : "FF",  "name" : "角色管理", "path":"","url":"/data/role.txt"
+				},
+				{
+					"index" : "GM1",  "name" : "字典管理", "path":"","url":"http://127.0.0.1:8087/dicts/list"
+				},
+				{
+					"index" : "TT",  "name" : "机构管理", "path":"","url":"/data/org.txt"
+				},
+				{
+					"index" : "TT2",  "name" : "机构管理2", "path":"","url":"/data/org2.txt"
+				},
+				{
+					"index" : "GG",  "name" : "租户管理", "path":"","url":"/data/tenant.txt"
+				},
+				{
+					"index" : "OU",  "name" : "区域管理", "path":"","url":"http://127.0.0.1:8087/forms/tbl/cfg/859332268240404480"
+				},
+				{
+					"index" : "OUK",  "name" : "表单配置", "path":"","url":"/data/form-conf.txt"
+				}
+			]
+		},
+		{
+			"index" : "basic",  "name" : "基础数据","iconCls": "el-icon-menu",
+			"children" : [
+				{
+					"index" : "EE",  "name" : "物料管理", "path":"","url":"/data/user.txt"
+				},
+				{
+					"index" : "FF",  "name" : "客户管理", "path":"","url":"/data/form.txt"
+				},
+				{
+					"index" : "GG",  "name" : "仓库管理", "path":"","url":"/data/tableB.txt"
+				},
+				{
+					"index" : "TT",  "name" : "区域管理", "path":"","url":"/data/treeAA.txt"
+				},
+				{
+					"index" : "HH",  "name" : "库位管理", "path":"","url":"/data/table.txt"
+				},
+				{
+					"index" : "SS",  "name" : "设备管理", "path":"","url":"/data/tableA.txt"
+				},
+				{
+					"index" : "PG",  "name" : "包装管理", "path":"","url":"/data/tableB.txt"
+				}
+			]
+		},
+		{
+			"index" : "inbound",  "name" : "入库管理","iconCls": "el-icon-picture",
+			"children" : [
+				{
+					"index" : "EE",  "name" : "采购订单", "path":"","url":"/data/form.txt"
+				},
+				{
+					"index" : "FF",  "name" : "ASN", "path":"","url":"/data/tableA.txt"
+				},
+				{
+					"index" : "GG",  "name" : "收货", "path":"","url":"/data/tableB.txt"
+				},
+				{
+					"index" : "TT",  "name" : "质检", "path":"","url":"/data/treeAA.txt"
+				},
+				{
+					"index" : "GG",  "name" : "上架", "path":"","url":"/data/tableB.txt"
+				}
+			]
+		},
+		{
+			"index" : "inven",  "name" : "库存管理","iconCls": "el-icon-message",
+			"children" : [
+				{
+					"index" : "EE",  "name" : "库存台账", "path":"","url":"/data/form.txt"
+				},
+				{
+					"index" : "FF",  "name" : "库存余量", "path":"","url":"/data/tableA.txt"
+				},
+				{
+					"index" : "GG",  "name" : "库存预警", "path":"","url":"/data/tableB.txt"
+				},
+				{
+					"index" : "TT",  "name" : "盘点", "path":"","url":"/data/treeAA.txt"
+				},
+				{
+					"index" : "GG",  "name" : "调拨", "path":"","url":"/data/tableB.txt"
+				},
+				{
+					"index" : "TT",  "name" : "呆滞废料", "path":"","url":"/data/treeAA.txt"
+				},
+				{
+					"index" : "GG",  "name" : "库存移动", "path":"","url":"/data/tableB.txt"
+				},
+				{
+					"index" : "GG",  "name" : "库位可视化", "path":"","url":"/data/tableB.txt"
+				}
+			]
+		},
+		{
+			"index" : "outbound",  "name" : "出库管理","iconCls": "el-icon-upload",
+			"children" : [
+				{
+					"index" : "EE",  "name" : "发运订单", "path":"","url":"/data/form.txt"
+				},
+				{
+					"index" : "FF",  "name" : "出库单证", "path":"","url":"/data/tableA.txt"
+				},
+				{
+					"index" : "GG",  "name" : "波次计划", "path":"","url":"/data/tableB.txt"
+				},
+				{
+					"index" : "TT",  "name" : "拣货", "path":"","url":"/data/treeAA.txt"
+				},
+				{
+					"index" : "GG",  "name" : "复核", "path":"","url":"/data/tableB.txt"
+				},
+				{
+					"index" : "TT",  "name" : "物流配送", "path":"","url":"/data/treeAA.txt"
+				},
+				{
+					"index" : "GG",  "name" : "回签单管理", "path":"","url":"/data/tableB.txt"
+				}
+			]
+		}
+	]
+}

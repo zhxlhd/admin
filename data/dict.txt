@@ -1,0 +1,153 @@
+{
+  "mate" : {
+    "columns" : [
+      {
+        "label":"键值",
+        "name" :"key",
+        "sortable" : true
+      },{
+        "label":"标签",
+        "name" :"label",
+        "sortable" : "custom"
+      },{
+        "label":"类型",
+        "name" :"type"
+      },{
+        "label" :"描述",
+        "name"  :"desc"
+      },{
+        "label" :"排序",
+        "width":"100",
+        "name"  :"order"
+      }
+    ],
+    "rows"  : [
+      {
+       "id":1,
+        "key": "1",
+        "label": "分类",
+        "type": "act_type",
+        "desc" : "区域类型",
+        "order"  : 1
+      },
+      {
+       "id":2,
+        "key": "2",
+        "label": "分类",
+        "type": "act_type",
+        "desc" : "区域类型",
+        "order"  : 2
+      },
+      {
+       "id":3,
+        "key": "3",
+        "label": "分类",
+        "type": "act_type",
+        "desc" : "区域类型",
+        "order"  : 3
+      },
+      {
+       "id":4,
+        "key": "4",
+        "label": "分类",
+        "type": "act_type",
+        "desc" : "区域类型",
+        "order"  : 4
+      },
+      {
+       "id":5,
+        "key": "5",
+        "label": "分类",
+        "type": "act_type",
+        "desc" : "区域类型",
+        "order"  : 5
+      },
+      {
+       "id":6,
+        "key": "6",
+        "label": "分类",
+        "type": "act_type",
+        "desc" : "区域类型",
+        "order"  : 6
+      }
+    ],
+    "btns" :[
+{
+      "action"   : "add",
+      "url"      : "/data/dict-form.txt",
+      "label"    : "新增字典",
+      "type"     : "success",
+      "isApi"    : false,
+      "useId"    : -1
+     },
+     {
+      "action"   :"deleteSelected",
+        "confirm": {
+          "msg" : "确定删除选中数据？"
+        },
+      "label"    : "删除字典",
+      "url"      : "/data/form.txt",
+      "type"     : "danger",
+      "isApi"    : true,
+      "useId"    : 1,
+      "isSelector" : true
+     }
+    ],
+    "actions" :[
+     {
+        "action"   :"add",
+        "url"      : "/data/form.txt",
+        "label"    : "修改",
+        "icon"     : "edit",
+        "isApi"    : false,
+        "useId"    : 0
+      },
+      {
+        "action"   :"deleteSelected",
+        "confirm"  : {
+          "msg"    : "确定删除选中数据？"
+        },
+        "label"    : "删除",
+        "url"      : "/data/form.txt",
+        "icon"     : "delete2",
+        "isApi"    : true,
+        "useId"    : 1,
+        "canDisable"  : true,
+        "disableKey"   : "num"
+      },
+      {
+        "action"    :"addChild",
+        "url"       : "/data/form.txt",
+        "label"     : "添加键值",
+        "isApi"     : false,
+        "useId"     : 0
+      }
+    ],
+    "search" : {
+      "values": {
+        "name": "",
+        "region" : ""
+      },
+      "fields" : [
+        {
+          "holder"      :"text",
+          "name"        :"name",
+          "placeholder" :"请输入描述"
+        }
+      ],
+      "rules": {
+        "name": [
+          { "min": 3, "max": 5, "message": "长度在 3 到 5 个字符", "trigger": "blur" }
+        ]
+      },
+      "inline" : true
+    },
+    "selected" :[3,5],
+    "dataApi" : "/data/dict-form.txt",
+    "page": 1,
+    "size": 5,
+    "total": 40
+  },
+  "title": "字典管理",
+  "view" : "KTable"
+}

@@ -1,0 +1,39 @@
+{
+  "name":"智能仓储云平台",
+	"menus": [
+		{
+			"index" : "basic",  "name" : "基础数据",
+			"children" : [
+				{
+					"index" : "EE",  "name" : "表单", "path":"","url":"/data/form.txt"
+				},
+				{
+					"index" : "FF",  "name" : "栏目列表", "path":"","url":"/data/tableA.txt"
+				},
+				{
+					"index" : "GG",  "name" : "栏目列表", "path":"","url":"/data/tableB.txt"
+				},
+				{
+					"index" : "TT",  "name" : "树状列表", "path":"","url":"/data/treeAA.txt"
+				}
+			]
+		},
+		{
+			"index" : "inbound",  "name" : "入库管理",
+			"children" : [
+				{
+					"index" : "EE",  "name" : "表单", "path":"","url":"/data/form.txt"
+				},
+				{
+					"index" : "FF",  "name" : "栏目列表", "path":"","url":"/data/tableA.txt"
+				},
+				{
+					"index" : "GG",  "name" : "栏目列表", "path":"","url":"/data/tableB.txt"
+				},
+				{
+					"index" : "TT",  "name" : "树状列表", "path":"","url":"/data/treeAA.txt"
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,15 @@
+# vscode 配置本地文件
+.vscode
+
+# git 本地库
+.git
+
+# npm依赖包
+/node_modules
+
+# 打包文件
+/dist
+
+# 其他
+.DS_Store
+npm-debug.log*

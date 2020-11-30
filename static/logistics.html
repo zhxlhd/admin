@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="generator" content="editplus" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=2.0, user-scalable=no, width=device-width">
+    <meta name="author" content="" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+</head>
+
+<body>
+<form name="gwLogin"  method="post" id="gwLogin"  action="http://cls.sunwoda.com/customsproject/home">
+    <input name="loginname"  type="hidden" id="username" value="1806010097"/>
+    <input name="password" type="hidden" id="password" value="123456"/>
+    <input name="lang" type="hidden" id="lang" value="zh"/>
+</form>
+</body>
+
+<script src="js/jquery.min.js"></script>
+<script>
+    (function ($) {
+        $.getUrlParam = function (name) {
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+            var r = window.location.search.substr(1).match(reg);
+            if (r != null) return decodeURI(r[2]);  return null;
+        }
+    })(jQuery);
+    // var userName = $.getUrlParam("userName");
+    // var passWord = $.getUrlParam("passWord");
+    // $("#username").val(userName)
+    // $("#password").val(passWord)
+    $("#gwLogin").submit()
+
+</script>
+
+
+</html>

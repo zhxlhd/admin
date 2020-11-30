@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="expires" content="Tue, 01 Jan 2018 1:00:00 GMT" />
+  <!-- 以上 3 个 meta 标签 *必须* 放在 head 的最前面；其他任何的 head 内容必须在这些标签的 *后面* -->
+  <link href="static/favicon.ico" type="image/x-icon" rel="shortcut icon" />
+  <link href="https://cdn.bootcdn.net/ajax/libs/element-ui/2.13.2/theme-chalk/index.css" rel="stylesheet">
+  <title>sccp</title>
+</head>
+
+<body>
+  <div id="app"></div>
+  <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.5.17/vue.min.js"></script>
+  <script src="https://cdn.bootcdn.net/ajax/libs/vue-router/3.0.1/vue-router.min.js"></script>
+  <script src="https://cdn.bootcdn.net/ajax/libs/vue-resource/1.5.1/vue-resource.min.js"></script>
+  <script src="https://cdn.bootcdn.net/ajax/libs/element-ui/2.13.2/index.js"></script>
+  <script src="https://cdn.bootcdn.net/ajax/libs/axios/0.18.0/axios.min.js"></script>
+  <script>
+    // 入口地址
+    window.bench = '/menus/sys?visualRange=2'
+    // 退出地址
+    window.exitPath = '/login'
+  </script>
+  <script src="https://cdn.bootcdn.net/ajax/libs/echarts/4.1.0/echarts.min.js"></script>
+  <script>
+    if (typeof Vue == 'undefined') {
+      document.write(unescape("%3Cscript src='/static/js/vue.min.js' type='text/javascript'%3E%3C/script%3E"));
+    }
+    if (typeof VueRouter == 'undefined') {
+      document.write(unescape("%3Cscript src='/static/js/vue-router.min.js'%3E%3C/script%3E"));
+    }
+    if (typeof VueResource  == 'undefined') {
+      document.write(unescape("%3Cscript src='/static/js/vue-resource.min.js'%3E%3C/script%3E"));
+    }
+    if (typeof ELEMENT == 'undefined') {
+      document.write(unescape('%3Clink rel="stylesheet" type="text/css" href="/static/css/theme-chalk.css" /%3E'));
+      document.write(unescape("%3Cscript src='/static/js/element.min.js'%3E%3C/script%3E"));
+    }
+    if (typeof axios == 'undefined') {
+      document.write(unescape("%3Cscript src='/static/js/axios.min.js'%3E%3C/script%3E"));
+    }
+    if (typeof echarts == 'undefined') {
+      document.write(unescape("%3Cscript src='/static/js/echarts.min.js'%3E%3C/script%3E"));
+    }
+  </script>
+</body>
+
+</html>

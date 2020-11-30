@@ -1,0 +1,410 @@
+<template>
+  <div>
+    <div style="margin-bottom:20px">
+      <el-row :gutter="24">
+        <el-form :label-position="labelPosition" :label-width="labelWidth" :model="simpleSearchForm" size="mini">
+          <el-col :sm="5" :md="5" :lg="5">
+            <el-form-item label="客户PO号">
+              <el-input v-model="simpleSearchForm.custPo" placeholder="请填写客户PO号"></el-input>
+            </el-form-item>
+          </el-col>
+          <el-col :sm="5" :md="5" :lg="5">
+            <el-form-item label="客户料号">
+              <el-input v-model="simpleSearchForm.custMaterialCode" placeholder="请填写客户料号"></el-input>
+            </el-form-item>
+          </el-col>
+          <el-col :sm="5" :md="5" :lg="5">
+            <el-form-item label="业务实体">
+              <el-input v-model="simpleSearchForm.custOrg" placeholder="请填写业务实体"></el-input>
+            </el-form-item>
+          </el-col>
+          <el-col :sm="5" :md="5" :lg="5">
+            <el-form-item label="供应商地点">
+              <el-input v-model="simpleSearchForm.supplierAddress" placeholder="请填写供应商地点"></el-input>
+            </el-form-item>
+          </el-col>
+          <el-col :sm="5" :md="5" :lg="5">
+            <el-form-item label="收货方地址">
+              <el-input v-model="simpleSearchForm.acceptGoodsLocation" placeholder="请填写收货方地点"></el-input>
+            </el-form-item>
+          </el-col>
+          <el-col :sm="5" :md="5" :lg="5">
+            <el-form-item label="收货方仓库">
+              <el-input v-model="simpleSearchForm.ebsInvSub" placeholder="请填写收货方仓库"></el-input>
+            </el-form-item>
+          </el-col>
+          <el-col :sm="5" :md="5" :lg="5">
+            <el-form-item label="发运到期时间">
+              <el-select clearable v-model="simpleSearchForm.endTime">
+                <el-option :label="item.label" :value="item.value" v-for="item of endTimeOptions" :key="item.name"></el-option>
+              </el-select>
+            </el-form-item>
+          </el-col>
+          <el-col :sm="6" :md="4" :lg="4">
+            <el-form-item>
+              <el-button @click="onSubmit" class="queryButton">查询</el-button>
+            </el-form-item>
+          </el-col>
+        </el-form>
+      </el-row>
+    </div>
+    <Boxer :mate="mate" :hasSelected="hasSelected" @action="handleButton" ref="Boxer">
+      <div slot="main">
+        <el-row>
+          <el-col :span="24">
+            <el-table size="mini" highlight-current-row ref="table" :data="mate.rows" border @selection-change="handleSelectionChange" style="width: 100%;">
+              <el-table-column type="selection" width="50" id="tableSel"></el-table-column>
+              <el-table-column 
+                :formatter="col.formatter" 
+                v-for="col of mate.columns"
+                v-bind:key="col.name" :label="col.label" :prop="col.name"
+                :width="col.width" :sortable="col.sortable" show-overflow-tooltip>
+              </el-table-column>
+              <el-table-column label="操作" :min-width="actionWidth" v-if="mate.actions">
+                <template slot-scope="scope">
+                  <k-btn v-for="act of mate.actions" v-bind:key="act.action" size="mini" :act="act"
+                    :icon="act.icon" :row="scope.row" @action="handleAction"></k-btn>
+                </template>
+              </el-table-column>
+            </el-table>
+          </el-col>
+        </el-row>
+        <el-row type="flex" justify="center" class="page">
+          <el-col :span="12" v-if="mate.page">
+            <el-pagination
+              @size-change="handleSizeChange"
+              @current-change="handleCurrentChange"
+              :current-page.sync="mate.page"
+              layout="total,prev, pager, next, sizes"
+              :total="mate.total"
+              :page-sizes ="[5, 10, 15, 20, 50, 100]"
+              :page-size="pageSize">
+            </el-pagination>
+          </el-col>
+        </el-row>
+      </div>
+    </Boxer>
+  </div>
+</template>
+
+<script>
+import SearchForm from '../../components/SearchForm'
+import KBtn from '../../components/KBtn.vue'
+import Vue from 'vue'
+import {API_GATEWAY} from '@/config/index.js'
+import Boxer from '../../components/Boxer.vue'
+import ColumnFormatterMixin from '../../mixins/ColumnFormatterMixin'
+import {DateFormat, trimSpace} from '../../utils/util.js'
+import axios from '@/utils/http'; // 导入http中创建的axios实例  
+
+const BASEAPI = `${API_GATEWAY}/api`
+export default {
+  mixins: [ColumnFormatterMixin],
+  components: {
+    SearchForm,
+    KBtn,
+    Boxer,
+    Formor: function index(resolve) {
+      require(['../../components/Formor.vue'], resolve)
+    }
+  },
+  props: {
+    mate: Object,
+    mateFormerHeaderId: String,
+    KTableItemCode: String,
+    mateFormCustomerId: String,
+    mateFormCustomerName: String,
+    mateFormOfficeId: String,
+    poDespatchIds: Array
+  },
+  data() {
+    return {
+      queryUrl: '/supplier-portal/shippablePo/list', // 查询分页接口
+      labelPosition: 'right',
+      labelWidth: '96px',
+      simpleSearchValue: [],           //搜索封装的参数
+      dtoList: {},                     //分页查询搜索封装参数
+      pageSize: 5,
+      currentPage: 1,
+      multipleSelection: [],
+      hasSelected: false,
+      searchValues: {},
+      page: 0,
+      sortValues: {},
+      action: null,
+      dialogTableVisible: false,
+      dialogPriceVisible: false,         // dialog开关
+      tableData: [],
+      word: '查 询',
+      priceColumns: {},
+      simpleSearchForm: {
+        custPo: '',
+        custMaterialCode: '',
+        custOrg: '',
+        endTime: '',
+        ebsInvSub: '',
+        supplierAddress: "",
+        acceptGoodsLocation: ""
+      },
+      endTimeOptions: [
+        { value: 'WEEK', label: '本周到期的发运' },
+        { value: 'ALL', label: '任何时间到期的发运' }
+      ],
+      object: {},                          // 放columns
+      mingxiRows: [],
+      priceList: {},                      // 明细行获取的数据
+      invyTagDlgVisible: false,
+      invyTagmate: {
+        startTagNo: '',
+        stolabel: '起始标签号',
+        incrementNumber: '',
+        inlabel: '数字增量',
+        numberOfTags: '',
+        numlabel: '标签数量'
+      },
+      physicalInventoryId: 0,
+      colModels: [],
+      dialogFile: false,
+      fileList: [],
+      customerId: '',
+      fileimportUrl: API_GATEWAY + '/api/users/import',
+      filedownloadUrl: API_GATEWAY + '/api/users/downloadFile',
+      headers: {
+        'Authorization': 'Bearer ' + window.sessionStorage.getItem('token'),
+        'Accept': 'application/json',
+        'X-TenantId': JSON.parse(window.sessionStorage.getItem('user')).tenantId
+      }
+    }
+  },
+  watch: {
+    multipleSelection: function (newSelection) {
+      this.hasSelected = (newSelection.length !== 0)
+    },
+    mate: function (newMate) {
+      this.$nextTick(function () {
+        this.rowSelect()
+      })
+    }
+  },
+  created() {
+    // this.getData()
+    if (this.mate !== undefined && this.mate.dataApi !== undefined) {
+      if (this.mate.dataApi.indexOf('/inventory/physical/snapshots/invyWatch/list') > -1 ||
+        this.mate.dataApi.indexOf('/inventory/physical/snapshots/invyApprove/list') > -1 ||
+        this.mate.dataApi.indexOf('/inventory/physical/snapshots/invyAdjust/list') > -1) {
+        if (this.mate.rows !== undefined && this.mate.rows.length > 0) {
+          this.physicalInventoryId = this.mate.rows[0].physicalInventoryId
+        }
+      }
+    }
+    // 设置默认发运到期时间
+    this.simpleSearchForm.endTime = 'WEEK';
+    this.onSubmit();
+  },
+  computed: {
+    actionWidth: function () {
+      return this.mate.actions.length * 60 + 30
+    }
+  },
+  mounted() {
+    this.rowSelect()
+  },
+  // 需要添加刷新消息
+  methods: {
+    onSubmit() {
+      //每次点击查询先把之前的查询条件清空
+      this.simpleSearchValue = []
+      // this.dtoList.selectedEbsPoDespatchIds = this.poDespatchIds
+      const vm = this
+      var requestBody = {
+        poNum: this.simpleSearchForm.custPo,
+        lineItemNum: this.simpleSearchForm.custMaterialCode,
+        orgId: this.simpleSearchForm.custOrg,
+        pageNum: this.page,
+        pageSize: this.pageSize,
+        customerName: this.mateFormCustomerName,
+        acceptGoodsLocation: this.simpleSearchForm.acceptGoodsLocation,
+        acceptWarehouse: this.simpleSearchForm.ebsInvSub,
+        supplierLocation: this.simpleSearchForm.supplierAddress,
+        dueDate: this.simpleSearchForm.endTime
+      }
+      const url = this.queryUrl
+      this.$root.ajaxData(url, requestBody, (data) => {
+        vm.mate.rows = data.list
+        vm.mate.total = data.total
+        vm.pageSize = data.pageSize
+      }, 'POST')
+    },
+    formatJson(filterVal, jsonData) {
+      return jsonData.map(v => filterVal.map(j => v[j]))
+    },
+    handleButton(btn) {
+      var vm = this
+      const row = {id: this.multipleSelection.map((r) => r.id)}
+      let ids = row.id
+      ids = ids.join()
+      if (btn.action === 'import') {
+        // 发运行
+        this.$http({
+          url: API_GATEWAY + '/api/purchase/goodsPricing/line/poDespatch/export',
+          method: 'POST',
+          headers: {
+            'Authorization': 'Bearer ' + window.sessionStorage.getItem('token'),
+            'Accept': 'application/json',
+            'X-TenantId': JSON.parse(window.sessionStorage.getItem('user')).tenantId,
+            'Content-Type': 'application/json;charset=utf8'
+          },
+          responseType: 'arraybuffer',
+          body: row.id
+        }).then(function (response) {
+          var blob = new Blob([response.data], {type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'})
+          // blob(size,type) Blob构造函数，接受两个参数。第一个参数是一个包含实际数据的数组，第二个参数是数据的类型
+          var objectUrl = URL.createObjectURL(blob)
+          var a = document.createElement('a')
+          document.body.appendChild(a)
+          a.setAttribute('style', 'display:none')
+          a.setAttribute('href', objectUrl)
+          var filename = '发运行信息.xlsx'
+          a.setAttribute('download', filename)
+          a.click()
+          URL.revokeObjectURL(objectUrl)
+        })
+        return
+      }
+    },
+    rowSelect() {
+      if (this.mate.rows !== undefined) {
+        this.mate.rows.forEach(row => {
+          /* eslint-disable */
+          let select = (row.id && this.mate.selected && this.mate.selected.findIndex(id => id == row.id) !== -1)
+          /* eslint-enable */
+          this.$refs.table.toggleRowSelection(row, (select === true))
+        })
+      }
+      // this.mate.selected = [];
+    },
+    // table表格中勾选的选项，val是勾选的对象
+    handleSelectionChange(val) {
+      this.$emit('actionSelected', val)
+      this.multipleSelection = val
+    },
+    handleSizeChange(val) {
+      this.pageSize = val
+      this.getData('daging')
+    },
+    handleCurrentChange(val) {
+      this.page = val
+      this.getData('paging')
+    },
+    handleAction(act, row) {
+      var vm = this
+      if (act.action === 'addPrice') {
+        this.dialogPriceVisible = true
+        this.mate.rows.priceList = row.priceList
+        return false
+      }
+    },
+    getData(flag) {
+      let url = this.queryUrl;
+      let data = {
+        poNum: this.simpleSearchForm.custPo,
+        lineItemNum: this.simpleSearchForm.custMaterialCode,
+        orgId: this.simpleSearchForm.custOrg,
+        pageNum: this.page,
+        pageSize: this.pageSize,
+        customerName: this.mateFormCustomerName
+      }
+      axios.post(url, data).then(res =>{
+        this.mate.rows = res.data.list;
+        this.mate.total = res.data.total;
+        this.pageSize = res.data.pageSize; 
+      })
+    },
+    formatterBefore() {
+      this.mate.columns.filter(col => col.dict !== undefined).forEach(function (col, i) {
+        let dictType = col.dict
+        if (dictType.indexOf('.') > -1) {
+          dictType = dictType.split('.')[1]
+        }
+        col.formatter = function (row, column) {
+          return DictStore.formatDict(dictType, row[column.property])
+        }
+      })
+    },
+    getEtagStyle(v) {
+      if (v) {
+        return 'success'
+      }
+      return 'gray'
+    },
+    toUriParams(data) {
+      return Object.keys(data).filter(i => !!data[i]).map(i => i + '=' + data[i]).join('&')
+    },
+    backwardUser() {
+    this.$root.monitor({url: '/users/list'})
+    },
+    formatJson(filterVal, jsonData) {
+      return jsonData.map(v => filterVal.map(j => v[j]))
+    }
+  }
+}
+</script>
+
+<style scoped>
+  .el-select{
+    width: 100%;
+  }
+  .page {
+    margin-top: 20px;
+  }
+
+  .main-block .search {
+    display: inline-block;
+    margin-left: 30px;
+    margin-top: -13px;
+  }
+
+  .el-form--inline .el-form-item {
+    margin-bottom: 0
+  }
+
+  .el-table .cell, .el-table th > div {
+    padding-right: 0;
+  }
+
+  .leftMargin {
+    float: left;
+    margin-left: 10px;
+  }
+
+  .leftFloat form {
+    display: inline-block;
+  }
+
+  .leftFloat div {
+    display: inline-block;
+    width: 250px;
+    height: 38px;
+    margin: 0px 15px 0 0;
+  }
+
+  .button {
+    margin-top: 10px;
+  }
+
+  .el-form-item {
+    margin: 10px 20px 2px 0;
+  }
+
+  .invyTagbtn {
+    margin-top: 20px;
+  }
+
+  .el-table td, .el-table th {
+    height: 30px;
+  }
+
+  .queryButton {
+    transform: translateX(-100px);
+  }
+</style>

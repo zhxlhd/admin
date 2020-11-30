@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>会员申请</title>
+    <meta name="generator" content="editplus" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=2.0, user-scalable=no, width=device-width">
+    <meta name="author" content="" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+</head>
+<link rel="stylesheet" href="https://unpkg.com/element-ui@1.4/lib/theme-default/index.css">
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<style>
+  #main{
+     font-size: 0.25rem;
+     padding-left: 12px;
+     padding-right: 12px;
+     box-sizing: border-box;
+ }
+    .title{
+        font-size: 0.35rem;
+        line-height: 1rem;
+        text-align: center;
+    }
+    .title_sub{
+        font-weight: 700;
+        font-size: 0.3rem;
+        color: #009ed6;
+        text-align: center;
+        margin-bottom: 10px;
+        margin-top: 10px;
+    }
+    .title_eng{
+        font-size: 0.25rem;
+        color: #009ed6;
+        text-align: center;
+        margin-bottom: 10px;
+        margin-top: 10px;
+    }
+    .load{
+      width:100%;
+      height: 100%;
+      z-index: 99;
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 0.3rem;
+      background-color: #fff;
+          }
+</style>
+<body>
+  <div class="load" id="load">加载中...</div>
+  <div id="main"  class="main"  v-loading.fullscreen.lock="fullscreenLoading">
+    <div class="home">
+        <div class="banner">
+            <div class="block">
+                <div class="wmargin">
+                    <el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="110px"  class="demo-ruleForm login-registration">
+                        <div class="title_sub">宝安区区块链技术联合会会员申请表<br><span class="title_eng">Membership application form of the Baoan District block chain Technology Federation</span></div>
+                        <el-form-item label="单位名称" prop="orgName">
+                            <el-input v-model="ruleForm.orgName" placeholder="请填写单位名称"></el-input>
+                        </el-form-item>
+                        <el-form-item label="营业执照" prop="businessLicense">
+                            <el-input v-model="ruleForm.businessLicense" placeholder="请填写营业执照"></el-input>
+                        </el-form-item>
+                        <el-form-item label="组织机构代码" prop="orgCode">
+                            <el-input v-model="ruleForm.orgCode" placeholder="请填写组织机构代码"></el-input>
+                        </el-form-item>
+                        <el-form-item label="法定代表人" prop="legalPerson">
+                            <el-input v-model="ruleForm.legalPerson" placeholder="请填写法定代表人"></el-input>
+                        </el-form-item>
+                        <el-form-item label="成立时间" prop="estDate">
+                            <el-date-picker type="date" placeholder="请选择成立时间" v-model="ruleForm.estDate"></el-date-picker>
+                        </el-form-item>
+                        <el-form-item label="所属行业" prop="industry">
+                            <el-select filterable v-model="ruleForm.industry" placeholder="请选择所属行业">
+                                <el-option v-for="item of industryOptions" :label="item.label" :value="item.value" :key="item.id"></el-option>
+                            </el-select>
+                        </el-form-item>
+                        <el-form-item label="联系电话" prop="phoneNum">
+                            <el-input v-model="ruleForm.phoneNum" placeholder="请填写联系电话"></el-input>
+                        </el-form-item>
+                        <el-form-item label="验证码" prop="phoneCode">
+                            <el-input placeholder="请输入验证码" v-model="ruleForm.phoneCode">
+                                <template slot="append" >
+                                    <el-button :disabled="see" style="width:95px"  type="primary"  @click="getType" >{{text}}</el-button></template>
+                            </el-input>
+                            <!--<el-input v-model="ruleForm.phoneCode" style="width:155px" placeholder="请输入验证码"></el-input><el-button :disabled="see" style="width:95px"  type="primary"  @click="getType" >{{text}}</el-button>-->
+                        </el-form-item>
+                        <el-form-item label="通讯地址" prop="address">
+                            <el-input v-model="ruleForm.address" placeholder="请填通讯地址"></el-input>
+                        </el-form-item>
+                        <el-form-item label="申请人" prop="applyPerson">
+                            <el-input v-model="ruleForm.applyPerson" placeholder="请填申请人"></el-input>
+                        </el-form-item>
+                        <el-form-item label="公司职务" prop="jobName">
+                            <el-input v-model="ruleForm.jobName" placeholder="请填公司职务"></el-input>
+                        </el-form-item>
+                        <el-form-item label="经营范围" prop="businessScope">
+                            <el-input type="textarea" v-model="ruleForm.businessScope"></el-input>
+                        </el-form-item>
+                        <el-form-item label="经营情况及在行业中的地位" prop="businessDetail">
+                            <el-input type="textarea" v-model="ruleForm.businessDetail"></el-input>
+                        </el-form-item>
+                        <el-form-item>
+                            <el-button type="primary" @click="submitForm">立即申请</el-button>
+                            <el-button @click="resetForm('ruleForm')">重置</el-button>
+                        </el-form-item>
+                    </el-form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+<script>
+(function (doc, win)
+{ var docEl = doc.documentElement,
+resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+recalc = function () { var clientWidth = docEl.clientWidth;
+if (!clientWidth) return;
+if(clientWidth>=750){
+docEl.style.fontSize = '100px';
+}else{
+docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
+} };
+if (!doc.addEventListener)
+return; win.addEventListener(resizeEvt, recalc, false);
+doc.addEventListener('DOMContentLoaded', recalc, false);
+})(document, window);
+</script>
+<script src="https://unpkg.com/vue@2.5/dist/vue.js"></script>
+<!-- 引入组件库 -->
+<script src="https://unpkg.com/element-ui@1.4/lib/index.js"></script>
+<script>
+    var countdown = 60
+    var a= new Vue({
+        el: '#main',
+      data () {
+        // 校验公司名是否存在
+        var checkOrgName = function checkOrgName(rule, value, callback) {
+          var vm = a;
+          vm.apicom('get', '/api/blockChain/get?orgName=' + value, {}, function (data) {
+            console.log(data);
+            if (data.data.length === 0) {
+              callback();
+            } else {
+              callback(new Error('该单位名称已存在'));
+            }
+          });
+        };
+        // 校验手机号
+        var checkPhoneNum = function (rule, value, callback) {
+          var vm = a
+          vm.apicom('get','/api/blockChain/get?phoneNum=' + value,{},function(data){
+            console.log(data);
+            if (data.data.length === 0) {
+              callback()
+            } else {
+              callback(new Error('该手机号已存在'))
+            }
+          })
+          var reg = 11 && /^((13|14|15|16|17|18)[0-9]{1}\d{8})$/
+          if (!reg.test(value)) {
+            callback(new Error('您输入的手机号码不合法，请重新输入'))
+          }
+        }
+        // 校验验证码
+        var checkPhoneCode = function (rule, value, callback) {
+          var vm = a
+          if (vm.ruleForm.phoneNum === '') {
+            callback(new Error('联系电话不能为空'))
+            return
+          }
+          vm.apicom('get','/api/register/' + vm.ruleForm.phoneNum + '/' + value,{},function(data){
+            if (data.statusCode === 10009) {
+            callback(new Error(data.message))
+            } else if (data.statusCode === 10012) {
+              callback(new Error('请重新发送验证码'))
+            } else {
+              callback()
+            }
+          })
+        }
+        return {
+          ruleForm: {
+            orgName: '',
+            estDate: '',
+            businessLicense: '',
+            orgCode: '',
+            industry: '',
+            legalPerson: '',
+            phoneNum: '',
+            address: '',
+            applyPerson: '',
+            jobName: '',
+            businessScope: '',
+            businessDetail: ''
+          },
+          rules: {
+            orgName: [
+              { required: true, message: '该输入项为必输项', trigger: 'blur' },
+              { validator: checkOrgName, trigger: 'blur' }
+            ],
+            industry:
+              { required: true, message: '该输入项为必输项' },
+            phoneNum: [
+              { required: true, message: '该输入项为必输项', trigger: 'blur' },
+              { max: 11, min: 11, message: '请输入11位的手机号', trigger: 'blur' },
+              { validator: checkPhoneNum, trigger: 'blur' }
+            ],
+            phoneCode: [
+              { required: true, message: '该输入项为必输项', trigger: 'blur' },
+              { max: 6, min: 6, message: '请输入6位的数字', trigger: 'blur' },
+              { validator: checkPhoneCode, trigger: 'blur' }
+            ],
+            address:
+              { required: true, message: '该输入项为必输项', trigger: 'blur' },
+            applyPerson:
+              { required: true, message: '该输入项为必输项', trigger: 'blur' },
+            jobName:
+              { required: true, message: '该输入项为必输项', trigger: 'blur' }
+          },
+          industryOptions: [{
+            value: '采矿业',
+            label: '采矿业'
+          },{
+            value: '制造业',
+            label: '制造业'
+          }, {
+            value: '信息传输、计算机服务和软件业',
+            label: '信息传输、计算机服务和软件业'
+          }, {
+            value: '农、林、牧、渔业',
+            label: '农、林、牧、渔业'
+          }, {
+            value: '电力、热力、燃气及水的生产和供应业',
+            label: '电力、热力、燃气及水的生产和供应业'
+          }, {
+            value: '环境和公共设施管理业',
+            label: '环境和公共设施管理业'
+          }, {
+            value: '建筑业',
+            label: '建筑业'
+          }, {
+            value: '交通运输、仓储业和邮政业',
+            label: '交通运输、仓储业和邮政业'
+          }, {
+            value: '住宿、餐饮业',
+            label: '住宿、餐饮业'
+          }, {
+            value: '金融、保险业',
+            label: '金融、保险业'
+          }, {
+            value: '房地产业',
+            label: '房地产业'
+          }, {
+            value: '租赁和商务服务业',
+            label: '租赁和商务服务业'
+          }, {
+            value: '科学研究、技术服务和地质勘查业',
+            label: '科学研究、技术服务和地质勘查业'
+          }, {
+            value: '水利、环境和公共设施管理业',
+            label: '水利、环境和公共设施管理业'
+          }, {
+            value: '居民服务和其他服务业',
+            label: '居民服务和其他服务业'
+          }, {
+            value: '教育业',
+            label: '教育业'
+          }, {
+            value: '卫生、社会保障和社会服务业',
+            label: '卫生、社会保障和社会服务业'
+          }, {
+            value: '文化、体育、娱乐业',
+            label: '文化、体育、娱乐业'
+          }, {
+            value: '综合(含投资类、主业不明显)',
+            label: '综合(含投资类、主业不明显)'
+          }, {
+            value: '其它',
+            label: '其它'
+          }
+          ],
+          homeContent: [],
+          groupMsg: {},
+          bidsMsg: {},
+          banner: {},
+          noticeList: [],
+          bgOpt: {
+            px: 0,
+            py: 0,
+            w: 0,
+            h: 0
+          },
+          floors: [],
+          hot: [],
+          loading: true,
+          isLogin: '',
+          see: false,
+          text: '获取验证码',
+          url: "http://sccp-api.dianliantech.com",
+          fullscreenLoading:false,
+        }
+      },
+      created () {
+        $("#load").css("display",'none');
+      },
+      mounted () {
+    
+      },
+      methods: {
+        // 获取验证码
+        getType () {
+          var vm = this
+          var reg = 11 && /^((13|14|15|16|17|18)[0-9]{1}\d{8})$/
+          if (!reg.test(vm.ruleForm.phoneNum)) {
+            vm.$notify.error({
+              title: '消息',
+              message: '请输入正确的手机号码'
+            })
+          } else {
+            vm.apicom('get','/api/register/sendVerifyCode/' + this.ruleForm.phoneNum + '?memberFlag=1',{},function(data){
+              if (data.statusCode === 200) {
+                vm.il = setInterval(function () {
+                  vm.see = false
+                  vm.text = '获取验证码'
+                  if (countdown === 0) {
+                    clearInterval(vm.il)
+                    countdown = 60
+                  } else {
+                    vm.see = true
+                    countdown--
+                    vm.text = '重新获取' + '(' + countdown + ')'
+                  }
+                }, 1000)
+              } else if (data.statusCode === 10003) {
+                vm.$notify.error({
+                  title: '消息',
+                  message: '该手机号码已存在'
+                })
+              } else {
+                vm.$notify.error({
+                  title: '消息',
+                  message: '短息发送失败'
+                })
+              }
+            })
+          }
+        },
+        submitForm () {
+          this.$refs['ruleForm'].validate( function (valid) {
+            var vm = a
+            if (valid) {
+              vm.apicom('get','/api/register/' + vm.ruleForm.phoneNum + '/' + vm.ruleForm.phoneCode,{},function(data){
+                if (data.statusCode === 10009) {
+                  vm.$notify.error({
+                    title: '消息',
+                    message: data.message
+                  })
+                  return
+                }
+                if (data.statusCode === 10012) {
+                  vm.$notify.error({
+                    title: '消息',
+                    message: data.message
+                  })
+                  return
+                }
+              })
+              var form = vm.ruleForm
+              $.ajax({
+                  type: "POST",
+                  contentType: "application/json;charset=UTF-8",
+                  url: vm.url+'/api/blockChain/save',
+                  data: JSON.stringify(form),
+                  dataType: 'json',
+                  success: function(data) {
+                        console.log(data);
+                        vm.$notify.success({
+                        title: '成功',
+                        message: '申请成功!'
+                      })
+                      vm.resetForm('ruleForm')
+                  }
+              });   
+            }else {
+              vm.$notify.error({
+                title: '消息',
+                message: '数据验证未通过'
+              })
+            }
+          })
+        },
+        resetForm (formName) {
+          this.$refs[formName].resetFields()
+        },
+        // 去公告详情页面
+        _toNoticeDetail (item) {
+          this.$router.push({name: 'noticeDetail', query: {id: item.id}})
+        },
+        apicom:function (type,url,pram,fn) {
+              let vm =this;
+            vm.fullscreenLoading = false;
+            $.ajax({
+                type:type,
+                url:vm.url+url,
+                dataType:"json",
+                data:pram,
+                success:fn,
+                error:function () {
+                    vm.$message("系统维护中")
+                },
+                complete:function () {
+                   vm.fullscreenLoading = false
+                }
+            });
+}
+      },
+    })
+</script>
+
+
+</html>

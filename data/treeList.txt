@@ -1,0 +1,199 @@
+{
+  "mate" : {
+    "columns" : [
+      {
+        "label":"机构名称",
+        "name" :"name",
+        "span" :4
+      },
+      {
+        "label":"归属区域",
+        "name" :"area",
+        "span" :4
+      },
+      {
+        "label":"机构编码",
+        "name" :"code",
+        "span" :4
+      },
+      {
+        "label":"机构类型",
+        "name" :"type",
+        "span" :4
+      },
+      {
+        "label":"备注",
+        "name" :"remark",
+        "span" :3
+      }
+    ],
+    "rows": [
+        {
+          "id"   : 1, 
+          "label": "一级 1",
+          "sort" : 1,
+          "children": [{
+            "id"   : 11,
+            "label": "广东总公司",
+            "name": "广东",
+            "area": "省",
+            "code": "10000",
+            "type": "公司",
+            "remark": "",
+            "sort" : 1,
+            "status":1
+          },{
+            "id"   : 12,
+            "label": "深圳分公司",
+            "name": "深圳",
+            "area": "市",
+            "code": "11000",
+            "type": "公司",
+            "remark": "",
+            "sort" : 1,
+            "status":1
+          },{
+            "id"   : 13,
+            "label": "深圳分公司",
+            "name": "深圳",
+            "area": "市",
+            "code": "11000",
+            "type": "公司",
+            "remark": "",
+            "sort" : 1,
+            "status":1
+          },{
+           "id"   : 14,
+            "label": "深圳分公司",
+            "name": "深圳",
+            "area": "市",
+            "code": "11000",
+            "type": "公司",
+            "remark": "",
+            "sort" : 1,
+            "status":1
+          }],
+          "status":1,
+          "num" : false
+        },
+        {
+          "id"   : 1, 
+          "label": "一级 1",
+          "sort" : 1,
+          "children": [{
+            "id"   : 11,
+            "label": "广东总公司",
+            "name": "广东",
+            "area": "省",
+            "code": "10000",
+            "type": "公司",
+            "remark": "",
+            "sort" : 1,
+            "status":1
+          },{
+            "id"   : 12,
+            "label": "深圳分公司",
+            "name": "深圳",
+            "area": "市",
+            "code": "11000",
+            "type": "公司",
+            "remark": "",
+            "sort" : 1,
+            "status":1
+          },{
+            "id"   : 13,
+            "label": "深圳分公司",
+            "name": "深圳",
+            "area": "市",
+            "code": "11000",
+            "type": "公司",
+            "remark": "",
+            "sort" : 1,
+            "status":1
+          },{
+           "id"   : 14,
+            "label": "深圳分公司",
+            "name": "深圳",
+            "area": "市",
+            "code": "11000",
+            "type": "公司",
+            "remark": "",
+            "sort" : 1,
+            "status":1
+          }],
+          "status":1,
+          "num" : false
+        },
+        {
+          "id"   : 1, 
+          "label": "一级 1",
+          "sort" : 1,
+          "children": [{
+            "id"   : 11,
+            "label": "广东总公司",
+            "name": "广东",
+            "area": "省",
+            "code": "10000",
+            "type": "公司",
+            "remark": "",
+            "sort" : 1,
+            "status":1
+          },{
+            "id"   : 12,
+            "label": "深圳分公司",
+            "name": "深圳",
+            "area": "市",
+            "code": "11000",
+            "type": "公司",
+            "remark": "",
+            "sort" : 1,
+            "status":1
+          },{
+            "id"   : 13,
+            "label": "深圳分公司",
+            "name": "深圳",
+            "area": "市",
+            "code": "11000",
+            "type": "公司",
+            "remark": "",
+            "sort" : 1,
+            "status":1
+          },{
+           "id"   : 14,
+            "label": "深圳分公司",
+            "name": "深圳",
+            "area": "市",
+            "code": "11000",
+            "type": "公司",
+            "remark": "",
+            "sort" : 1,
+            "status":1
+          }],
+          "status":1,
+          "num" : false
+        }
+    ],
+    "btns" :[{
+        "action"   : "add",
+        "url"      : "/data/form.txt",
+        "label"    : "增加",
+        "type"     : "success",
+        "isApi"    : false,
+        "useId"    : -1,
+        "isSelector" : false
+      }],
+    "actions":[
+      {
+        "action"    :"edit",
+        "url"       : "/data/form.txt",
+        "label"     : "修改",
+        "icon"      : "edit",
+        "isApi"     : false,
+        "useId"     : 0
+      }
+    ],
+    "treeTitle" : "组织机构"
+  },
+  "title" : "组织机构",
+  "view" : "TreeList"
+}

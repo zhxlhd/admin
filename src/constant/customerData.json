@@ -1,0 +1,1138 @@
+{
+  "AddMainMsg" : {
+        "columns": [
+          {
+            "label": "地点编码",
+            "name": "code",
+            "width": 150
+          },
+          {
+            "label": "机构",
+            "name": "orgId",
+            "width": 150
+          },
+          {
+            "label": "地点名称",
+            "name": "name",
+            "width": 200
+          },
+          {
+            "label": "国家",
+            "name": "country",
+            "width": 100
+          },
+          {
+            "label": "省/直辖市",
+            "name": "province",
+            "width": 120
+          },
+          {
+            "label": "城市",
+            "name": "city",
+            "width": 100
+          },
+          {
+            "label": "区/县",
+            "name": "county",
+            "width": 120
+          },
+          {
+            "label": "详细地址",
+            "name": "address",
+            "width": 250
+          },
+          {
+            "label": "业务实体",
+            "name": "entityName",
+            "width": 200
+          },
+          {
+            "label": "地点状态",
+            "name": "status",
+            "width": 100
+          },
+          {
+            "label": "是否主要地点",
+            "name": "mainAddress",
+            "width": 130
+          },
+          {
+            "label": "审核日期",
+            "name": "auditDate",
+            "width": 150
+          },
+          {
+            "label": "档案编号",
+            "name": "fileNumber",
+            "width": 200
+          },
+          {
+            "label": "是否收单地址",
+            "name": "acceptUnilateral",
+            "width": 150
+          },
+          {
+            "label": "经办人",
+            "name": "userId",
+            "width": 100
+          },
+          {
+            "label": "原系统编码",
+            "name": "orignalSystemCode",
+            "width": 200
+          }
+        ]
+      },
+      "AddSellMsg": {
+        "columns": [
+          {
+            "label": "收单方",
+            "name": "goodsReceiver",
+            "width": 180
+          },
+          {
+            "label": "收货方",
+            "name": "billReceiver",
+            "width": 180
+          },
+          {
+            "label": "关联收单方",
+            "name": "relateBillReceiver",
+            "width": 220
+          },
+          {
+            "label": "客户开票名称",
+            "name": "invoiceName",
+            "width": 180
+          },
+          {
+            "label": "可接受近效期天数",
+            "name": "nearlyEffective",
+            "width": 130
+          },
+          {
+            "label": "客户指定票货通行模板",
+            "name": "shipmentTemplate",
+            "width": 130
+          },
+          {
+            "label": "订单释放级别",
+            "name": "orderReleaseLevel",
+            "width": 130
+          },
+          {
+            "label": "拼批要求",
+            "name": "inBatches",
+            "width": 180
+          },
+          {
+            "label": "整零要求",
+            "name": "allowOdd",
+            "width": 130
+          },
+          {
+            "label": "配送里程(KM)",
+            "name": "mileage",
+            "width": 180
+          }
+        ]
+      },
+      "AddPoMsg": {
+        "columns": [
+          {
+            "label": "可采购",
+            "name": "canPurchase"
+          },
+          {
+            "label": "可付款",
+            "name": "canPayment"
+          },
+          {
+            "label": "询价",
+            "name": "enquiry"
+          }
+        ]
+      },
+      "AddFaniMsg": {
+        "columns": [
+          {
+            "label": "付款条件",
+            "name": "payment",
+            "width": 180,
+            "dict": "paymentMethod"
+          },
+          {
+            "label": "币种",
+            "name": "currency",
+            "width": 130,
+            "dict": "currency"
+          },
+          {
+            "label": "税种",
+            "name": "taxCategory",
+            "width": 130,
+            "dict": "taxCategory"
+          },
+          {
+            "label": "税率",
+            "name": "taxRate",
+            "width": 130,
+            "dict": "tax"
+          },
+          {
+            "label": "ebs税率",
+            "name": "ebsTax",
+            "width": 130
+          },
+          {
+            "label": "发票类型",
+            "name": "invoiceType",
+            "width": 180,
+            "dict": "invoiceType"
+          },
+          {
+            "label": "账期起算标准",
+            "name": "paymentSince",
+            "width": 180,
+            "dict": "paymentSince"
+          },
+          {
+            "label": "付款方式",
+            "name": "paymentMode",
+            "width": 180,
+            "dict": "paymentMode"
+          },
+          {
+            "label": "付款天数",
+            "name": "paymentDays",
+            "width": 130
+          },
+          {
+            "label": "授信额度",
+            "name": "creditLine",
+            "width": 180
+          },
+          {
+            "label": "资信账期",
+            "name": "creditPaymentDays",
+            "width": 180
+          }
+        ]
+      },
+      "BankMsg": {
+        "columns": [
+          {
+            "label": "银行编号",
+            "name": "bankCode",
+            "width": 100
+          },
+          {
+            "label": "银行名称",
+            "name": "bankName",
+            "width": 150
+          },
+          {
+            "label": "联行号",
+            "name": "lineNumber",
+            "width": 150
+          },
+          {
+            "label": "开户行",
+            "name": "openingBank",
+            "width": 150
+          },
+          {
+            "label": "银行账号",
+            "name": "account",
+            "width": 200
+          },
+          {
+            "label": "账户名称",
+            "name": "accountName",
+            "width": 150
+          },
+          {
+            "label": "币种",
+            "name": "currency",
+            "width": 80
+          },
+          {
+            "label": "账户性质",
+            "name": "mature",
+            "width": 150
+          },
+          {
+            "label": "地区代码",
+            "name": "areaCode",
+            "width": 100
+          },
+          {
+            "label": "国家",
+            "name": "country",
+            "width": 100
+          },
+          {
+            "label": "省份",
+            "name": "province",
+            "width": 80
+          },
+          {
+            "label": "城市",
+            "name": "city",
+            "width": 100
+          },
+          {
+            "label": "分行编码",
+            "name": "branchCode",
+            "width": 100
+          },
+          {
+            "label": "分行名称",
+            "name": "branchName",
+            "width": 200
+          },
+          {
+            "label": "银行状态",
+            "name": "status",
+            "width": 100
+          },
+          {
+            "label": "是否增值税用",
+            "name": "flagVatUsed",
+            "width": 150
+          }
+        ]
+      },
+      "customerMsg": {
+        "columns": [
+          {
+            "label": "性别",
+            "name": "sex",
+            "width": 80
+          },
+          {
+            "label": "姓名",
+            "name": "name",
+            "width": 80
+          },
+          {
+            "label": "电话号码",
+            "name": "phoneNumber",
+            "width": 150
+          },
+          {
+            "label": "传真号码",
+            "name": "fax",
+            "width": 150
+          },
+          {
+            "label": "移动电话",
+            "name": "mobile",
+            "width": 150
+          },
+          {
+            "label": "邮件地址",
+            "name": "email",
+            "width": 200
+          },
+          {
+            "label": "部门",
+            "name": "dept",
+            "width": 200
+          },
+          {
+            "label": "职位",
+            "name": "job",
+            "width": 200
+          },
+          {
+            "label": "联系人地址",
+            "name": "address",
+            "width": 200
+          },
+          {
+            "label": "失效日期",
+            "name": "expireDate",
+            "width": 200
+          },
+          {
+            "label": "系统账号",
+            "name": "sysAccountName",
+            "width": 150
+          }
+        ]
+      },
+      "fileMsg": {
+        "columns": [
+          {
+            "label": "附件类型",
+            "name": "type"
+          },
+          {
+            "label": "附件名称",
+            "name": "name"
+          },
+          {
+            "label": "附件大小",
+            "name": "fileSize"
+          },
+          {
+            "label": "上传时间",
+            "name": "createAt"
+          },
+          {
+            "label": "上传人",
+            "name": "createBy"
+          },
+          {
+            "label": "附件说明",
+            "name": "remark"
+          }
+        ]
+      },
+      "newPoMsg": {
+        "values": {
+          "canPurchase": "1",
+          "canPayment": "1",
+          "enquiry": ""
+        },
+        "fields": [
+          {
+            "holder": "select",
+            "name": "canPurchase",
+            "label": "可采购",
+            "options": [
+              {
+                "label": "是",
+                "value": "1"
+              },
+              {
+                "label": "否",
+                "value": "0"
+              }
+            ]
+          },
+          {
+            "holder": "select",
+            "name": "canPayment",
+            "label": "可付款",
+            "options": [
+              {
+                "label": "是",
+                "value": "1"
+              },
+              {
+                "label": "否",
+                "value": "0"
+              }
+            ]
+          },
+          {
+            "holder": "select",
+            "name": "enquiry",
+            "label": "询价",
+            "options": [
+              {
+                "label": "是",
+                "value": "1"
+              },
+              {
+                "label": "否",
+                "value": "0"
+              }
+            ]
+          }
+        ]
+      },
+      "newSellMsg": {
+        "values": {
+          "goodsReceiver": "1",
+          "billReceiver": "1",
+          "relateBillReceiver": "",
+          "invoiceName": "",
+          "nearlyEffective": "1",
+          "shipmentTemplate": "",
+          "orderReleaseLevel": "",
+          "inBatches": "",
+          "allowOdd": "1",
+          "mileage": "1"
+        },
+        "fields": [
+          {
+            "holder": "text",
+            "name": "goodsReceiver",
+            "label": "收单方",
+            "options": [
+              {
+                "label": "是",
+                "value": "1"
+              },
+              {
+                "label": "否",
+                "value": "0"
+              }
+            ]
+          },
+          {
+            "holder": "text",
+            "name": "billReceiver",
+            "label": "收货方",
+            "options": [
+              {
+                "label": "是",
+                "value": "1"
+              },
+              {
+                "label": "否",
+                "value": "0"
+              }
+            ]
+          },
+          {
+            "holder": "select",
+            "name": "relateBillReceiver",
+            "label": "关联收单方",
+            "type": "relateBillReceiver",
+            "options": []
+          },
+          {
+            "holder": "text",
+            "name": "invoiceName",
+            "label": "客户开票名称"
+          },
+          {
+            "holder": "textNum",
+            "name": "nearlyEffective",
+            "label": "可接受近效期天数",
+            "placeholder": "请输入天数"
+          },
+          {
+            "holder": "select",
+            "name": "shipmentTemplate",
+            "label": "客户指定票货通行模板",
+            "options": [
+              {
+                "label": "是",
+                "value": "1"
+              },
+              {
+                "label": "否",
+                "value": "0"
+              }
+            ]
+          },
+          {
+            "holder": "select",
+            "name": "orderReleaseLevel",
+            "label": "订单释放级别",
+            "options": [
+              {
+                "label": "高级",
+                "value": "高级"
+              },
+              {
+                "label": "中级",
+                "value": "中级"
+              },
+              {
+                "label": "低级",
+                "value": "低级"
+              }
+            ]
+          },
+          {
+            "holder": "select",
+            "name": "inBatches",
+            "label": "拼批要求",
+            "options": [
+              {
+                "label": "1",
+                "value": "1"
+              },
+              {
+                "label": "2",
+                "value": "2"
+              },
+              {
+                "label": "3",
+                "value": "3"
+              },
+              {
+                "label": "4",
+                "value": "4"
+              },
+              {
+                "label": "5",
+                "value": "5"
+              }
+            ]
+          },
+          {
+            "holder": "select",
+            "name": "allowOdd",
+            "label": "整零要求",
+            "options": [
+              {
+                "label": "是",
+                "value": "1"
+              },
+              {
+                "label": "否",
+                "value": "0"
+              }
+            ]
+          },
+          {
+            "holder": "textNum",
+            "name": "mileage",
+            "label": "配送里程(KM)"
+          }
+        ]
+      },
+      "newMainMsg": {
+        "values": {
+          "code": "",
+          "orgId": "",
+          "name": "",
+          "country": "",
+          "province": "1",
+          "city": "36",
+          "county": "37",
+          "addressLine": "",
+          "status": "1",
+          "mainAddress": "1",
+          "auditDate": "",
+          "fileNumber": "",
+          "userId": "",
+          "orignalSystemCode": "",
+          "orgName": "",
+          "acceptUnilateral": ""
+        },
+        "fields": [
+          {
+            "holder": "text",
+            "name": "country",
+            "label": "国家"
+          },
+          {
+            "holder": "text",
+            "name": "code",
+            "label": "地点编码"
+          },
+          {
+            "holder" : "text",
+            "name" : "orgId",
+            "label" : "机构"
+          }, 
+          {
+            "holder": "text",
+            "name": "name",
+            "label": "地点名称"
+          },
+          
+          {
+            "holder": "province",
+            "name": "province",
+            "label": "省/直辖市"
+          },
+          {
+            "holder": "city",
+            "name": "city",
+            "label": "城市"
+          },
+          {
+            "holder": "county",
+            "name": "county",
+            "label": "区/县"
+          },
+          {
+            "holder": "text",
+            "name": "addressLine",
+            "label": "详细地址",
+            "options": []
+          },
+          {
+            "holder": "select",
+            "name": "status",
+            "label": "地点状态",
+            "options": [
+              {
+                "label": "有效",
+                "value": "1"
+              },
+              {
+                "label": "无效",
+                "value": "0"
+              }
+            ]
+          },
+          {
+            "holder": "select",
+            "name": "mainAddress",
+            "label": "是否主要地点",
+            "options": [
+              {
+                "label": "是",
+                "value": "1"
+              },
+              {
+                "label": "否",
+                "value": "0"
+              }
+            ]
+          },
+          {
+            "holder": "date",
+            "name": "auditDate",
+            "label": "审核日期"
+          },
+          {
+            "holder": "text",
+            "name": "fileNumber",
+            "label": "档案编号"
+          },
+          {
+            "holder": "text",
+            "name": "userId",
+            "label": "经办人",
+            "options": []
+          },
+          {
+            "holder": "text",
+            "name": "orignalSystemCode",
+            "label": "原系统编码"
+          },
+          {
+            "holder": "select",
+            "name": "acceptUnilateral",
+            "label": "是否收单地址",
+            "options": [
+              {
+                "label": "是",
+                "value": "1"
+              },
+              {
+                "label": "否",
+                "value": "0"
+              }
+            ]
+          }
+        ],
+        "rules": {
+          "orgId" : [
+            {
+              "required" : true,
+              "message" : "请选择机构名称",
+              "trigger": "change"
+            }
+          ],
+          "name" : [
+            {
+              "required" : true,
+              "message" : "请输入地点名称",
+              "trigger": "blur"
+            }
+          ],
+          "address" : [
+            {
+              "required" : true,
+              "message" : "请输入详细地址账号",
+              "trigger": "blur"
+            }
+          ]
+        }
+      },
+      "newFaniMsg": {
+        "values": {
+          "payment": "",
+          "currency": "",
+          "taxCategory": "",
+          "taxRate": "",
+          "ebsTax": "",
+          "invoiceType": "",
+          "paymentSince": "",
+          "paymentMode": "",
+          "paymentDays": "",
+          "creditLine": "",
+          "creditPaymentDays": ""
+        },
+        "fields": [
+          {
+            "holder": "select",
+            "name": "payment",
+            "label": "付款条件",
+            "type": "paymentMethod",
+            "options": []
+          },
+          {
+            "holder": "select",
+            "name": "currency",
+            "label": "币种",
+            "type": "currency",
+            "options": []
+          },
+          {
+            "holder": "select",
+            "name": "taxCategory",
+            "label": "税种",
+            "type": "taxCategory",
+            "options": []
+          },
+          {
+            "holder": "select",
+            "name": "taxRate",
+            "type": "taxRate",
+            "label": "税率（%）",
+            "options": []
+          },
+          {
+            "holder": "select",
+            "name": "invoiceType",
+            "label": "发票类型",
+            "type": "invoiceType",
+            "options": []
+          },
+          {
+            "holder": "select",
+            "name": "paymentSince",
+            "label": "账期起算标准",
+            "type": "paymentSince",
+            "options": []
+          },
+          {
+            "holder": "select",
+            "name": "paymentWay",
+            "label": "付款方式",
+            "type": "paymentWay",
+            "options": []
+          },
+          {
+            "holder": "textNum",
+            "name": "paymentDays",
+            "label": "付款天数",
+            "placeholder": "请输入数字"
+          },
+          {
+            "holder": "textNum",
+            "name": "creditLine",
+            "label": "授信额度",
+            "placeholder": "请输入数字"
+          },
+          {
+            "holder": "textNum",
+            "name": "creditPaymentDays",
+            "label": "资信账期",
+            "placeholder": "请输入数字"
+          }
+        ]
+      },
+      "newBankMsg": {
+        "values": {
+          "addressId": "",
+          "bankCode": "",
+          "bankName": "",
+          "lineNumber": "",
+          "openingBank": "",
+          "account": "",
+          "accountName": "",
+          "currency": "",
+          "mature": "",
+          "areaCode": "",
+          "country": "",
+          "province": "36",
+          "city": "37",
+          "branchCode": "",
+          "branchName": "",
+          "status": "1",
+          "flagVatUsed": "1"
+        },
+        "fields": [
+          {
+            "holder": "select",
+            "name": "addressId",
+            "label": "地点",
+            "options": []
+          },
+          {
+            "holder": "text",
+            "name": "account",
+            "label": "银行账号"
+          },
+          {
+            "holder": "text",
+            "name": "bankCode",
+            "label": "银行编号"
+          },
+          {
+            "holder": "text",
+            "name": "bankName",
+            "label": "银行名称"
+          },
+          {
+            "holder": "text",
+            "name": "lineNumber",
+            "label": "联行号"
+          },
+          {
+            "holder": "text",
+            "name": "openingBank",
+            "label": "开户行名称"
+          },
+          
+          {
+            "holder": "text",
+            "name": "accountName",
+            "label": "账户名称"
+          },
+          {
+            "holder": "select",
+            "name": "currency",
+            "label": "账户币种",
+            "type": "currency"
+          },
+          {
+            "holder": "select",
+            "name": "mature",
+            "label": "银行账户性质",
+            "type": "mature"
+          },
+          {
+            "holder": "text",
+            "name": "areaCode",
+            "label": "地区代码"
+          },
+          {
+            "holder": "text",
+            "name": "country",
+            "label": "国家"
+          },
+          {
+            "holder": "province",
+            "name": "province",
+            "label": "省份"
+          },
+          {
+            "holder": "city",
+            "name": "city",
+            "label": "城市"
+          },
+          {
+            "holder": "text",
+            "name": "branchCode",
+            "label": "分行编码"
+          },
+          {
+            "holder": "text",
+            "name": "branchName",
+            "label": "分行名称"
+          },
+          {
+            "holder": "select",
+            "name": "status",
+            "label": "银行状态",
+            "options": [
+              {
+                "label": "有效",
+                "value": "1"
+              },
+              {
+                "label": "无效",
+                "value": "0"
+              }
+            ]
+          },
+          {
+            "holder": "select",
+            "name": "flagVatUsed",
+            "label": "是否增值税用",
+            "options": [
+              {
+                "label": "是",
+                "value": "1"
+              },
+              {
+                "label": "否",
+                "value": "0"
+              }
+            ]
+          }
+        ],
+        "rules": {
+          "addressId" : [
+            {
+              "required" : true,
+              "message" : "请输入地点名称",
+              "trigger": "change"
+            }
+          ],
+          "bankName" : [
+            {
+              "required" : true,
+              "message" : "请输入银行名称",
+              "trigger": "blur"
+            }
+          ],
+          "account" : [
+            {
+              "required" : true,
+              "message" : "请输入银行账号",
+              "trigger": "blur"
+            }
+          ],
+          "bankCode" : [
+            {
+              "required" : true,
+              "message" : "请输入银行编码",
+              "trigger": "blur"
+            }
+          ]
+        }
+      },
+      "newCoutomerMsg": {
+        "values": {
+          "addressId": "",
+          "sex": "男",
+          "name": "",
+          "phoneNumber": 0,
+          "fax": "",
+          "mobile": "",
+          "email": "",
+          "dept": "",
+          "job": "",
+          "address": "",
+          "expireDate": "",
+          "sysAccountName": ""
+        },
+        "fields": [
+          {
+            "holder": "select",
+            "name": "addressId",
+            "label": "地点",
+            "options": []
+          },
+          {
+            "holder": "select",
+            "name": "sex",
+            "label": "性别",
+            "options": [
+              {
+                "label": "男",
+                "value": "男"
+              },
+              {
+                "label": "女",
+                "value": "女"
+              }
+            ]
+          },
+          {
+            "holder": "text",
+            "name": "name",
+            "label": "姓名"
+          },
+          {
+            "holder": "text",
+            "name": "phoneNumber",
+            "label": "电话号码"
+          },
+          {
+            "holder": "text",
+            "name": "fax",
+            "label": "传真号码"
+          },
+          {
+            "holder": "text",
+            "name": "mobile",
+            "label": "移动电话"
+          },
+          {
+            "holder": "text",
+            "name": "email",
+            "label": "邮箱地址"
+          },
+          {
+            "holder": "text",
+            "name": "dept",
+            "label": "部门"
+          },
+          {
+            "holder": "text",
+            "name": "job",
+            "label": "职位"
+          },
+          {
+            "holder": "text",
+            "name": "address",
+            "label": "联系人地址"
+          },
+          {
+            "holder": "date",
+            "name": "expireDate",
+            "label": "失效日期"
+          },
+          {
+            "holder": "select",
+            "name": "sysAccountName",
+            "label": "系统账号",
+            "type": "sysAccountName",
+            "options": []
+          }
+        ],
+        "rules": {
+          "addressId" : [
+            {
+              "required" : true,
+              "message" : "请输入地点名称",
+              "trigger": "change"
+            }
+          ],
+          "name" : [
+            {
+              "required" : true,
+              "message" : "请输入姓名",
+              "trigger": "blur"
+            }
+          ],
+          "phoneNumber" : [
+            {
+              "required" : true,
+              "message" : "请输入电话号码",
+              "trigger": "blur"
+            }
+          ],
+          "email" : [
+            {
+              "required" : true,
+              "message" : "请输入邮箱",
+              "trigger": "blur"
+            }
+          ]
+        }
+      },
+      "newFile": {
+        "values": {
+          "type": "",
+          "name": "",
+          "fileSize": "",
+          "createAt": "",
+          "createBy": "",
+          "remark": ""
+        },
+        "fields": [
+          {
+            "holder": "upload",
+            "label": "附件"
+          },
+          {
+            "holder": "text",
+            "name": "type",
+            "label": "附件类型"
+          },
+          {
+            "holder": "text",
+            "name": "remark",
+            "label": "附件说明"
+          }
+        ]
+      }
+}

@@ -1,0 +1,135 @@
+﻿{
+  "mate" : {
+    "columns" : [
+      {
+        "label":"角色名称",
+        "name" :"name",
+        "sortable" : true
+      },{
+        "label":"英文名称",
+        "name" :"ename",
+        "sortable" : "custom"
+      },{
+        "label":"归属机构",
+        "name" :"org"
+      },{
+        "label" :"数据范围",
+        "name": "status"
+      }
+    ],
+    "rows"  : [
+      {
+    	  "id":1,
+        "name": "平台管理员",
+        "ename": "plateform admin",
+        "org" : "广东总公司",
+        "status" : "所在公司及以下数据"
+      }, {
+        "id":2,
+        "name": "平台管理员",
+        "ename": "plateform admin",
+        "org" : "广东总公司",
+        "status" : "所在公司及以下数据"
+      }, {
+        "id":3,
+        "name": "普通用户",
+        "ename": "plateform admin",
+        "org" : "广东总公司",
+        "status" : "所在公司及以下数据"
+      }, {
+        "id":4,
+        "name": "普通管理员",
+        "ename": "plateform admin",
+        "org" : "广东总公司",
+        "status" : "所在公司及以下数据"
+      }, {
+        "id":5,
+        "name": "运维管理员",
+        "ename": "plateform admin",
+        "org" : "广东总公司",
+        "status" : "所在公司及以下数据"
+      }, {
+        "id":6,
+        "name": "部门管理员",
+        "ename": "plateform admin",
+        "org" : "广东总公司",
+        "status" : "所在部门及以下数据"
+      }, {
+        "id":7,
+        "name": "最终用户",
+        "ename": "plateform admin",
+        "org" : "广东分公司",
+        "status" : "按明细设置"
+      }
+    ],
+    "btns" :[
+    	{
+    		"action"   : "add",
+    		"url"      : "/data/role-form.txt",
+    		"label"    : "增加角色",
+    		"type"     : "success",
+    		"isApi"    : false,
+    		"useId"    : -1
+    	}
+    ],
+    "actions" :[
+    	{
+    		"action":"edit",
+    		"url"   : "/data/role-form-edit.txt",
+    		"label" : "修改",
+        "icon"  : "edit",
+    		"type"  : "",
+    		"isApi" : false,
+    		"useId" : -1,
+        "canDisable"   : true,
+				"disableKey"   : "close"
+    	},
+    	{
+    		"action" : "delete",
+        "confirm": {
+          "msg" : "确定删除本条数据？"
+        },
+    		"label"  : "删除",
+        "icon"   : "delete",
+    		"url"    : "/data/role-form.txt",
+    		"type"   : "",
+    		"isApi"  : true,
+    		"useId"  : 0
+    	},
+    	{
+    		"action":"action",
+    		"label" : "分配用户",
+    		"url"   : "/data/role-role-form.txt",
+    		"type"  : "",
+    		"isApi" : false,
+    		"useId" : 0
+    	}
+    ],
+    "search" : {
+      "values": {
+        "name": "",
+        "org" : ""
+      },
+      "fields" : [
+        {
+          "holder"      :"text",
+          "name"        :"name",
+          "placeholder" :"请输入角色名称"
+        }
+      ],
+      "rules": {
+        "name": [
+          { "min": 3, "max": 5, "message": "长度在 3 到 5 个字符", "trigger": "blur" }
+        ]
+      },
+      "inline" : true
+    },
+    "selected" :[3,5],
+    "dataApi" : "/data/role.txt",
+    "page"    : 1,
+    "size":6,
+    "total"   : 40
+  },
+  "title": "角色管理",
+  "view" : "KTable"
+}

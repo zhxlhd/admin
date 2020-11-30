@@ -1,0 +1,108 @@
+{
+  "mate" : {
+    	"values": {
+        "parent": "basic",
+        "name": "",
+        "ename": "",
+        "icon": "",
+        "path": "",
+        "order": 10,
+        "display": 1
+      },
+  		"fields" : [
+    		{
+    			"holder"      :"cascader",
+    			"name"        :"parent",
+    			"label"       :"上级菜单",
+    			"placeholder" :"请选择上级菜单",
+          "options": [
+            {
+              "label"   :"基础数据",
+              "value"   :"basic"
+            },{
+              "label"   :"入库管理",
+              "value"   :"inbound"
+            },
+            {
+              "label"   :"库存管理",
+              "value"   :"inventory"
+            },{
+              "label"   :"出库管理",
+              "value"   :"outbound"
+            }
+          ]
+    		},
+    		{
+    			"holder"      :"text",
+    			"name"        :"name",
+    			"label"       :"名称",
+    			"placeholder" :"请输入菜单名称"
+    		},
+    		{
+    			"holder"      :"text",
+    			"name"        :"ename",
+    			"label"       :"英文名称",
+    			"placeholder" :"请输入英文菜单名称"
+    		},
+        {
+          "holder"      :"iconselect",
+          "name"        :"icon",
+          "label"       :"请选择图标",
+          "options"     :[
+            {
+              "label"   :"amazon",
+              "value"   :"fa fa-amazon"
+            },{
+              "label"   :"balance-scale",
+              "value"   :"fa fa-balance-scale"
+            },{
+              "label"   :"500px",
+              "value"   :"fa fa-500px"
+            },{
+              "label"   :"clone",
+              "value"   :"fa fa-clone"
+            }
+          ]
+        },
+        {
+          "holder"      :"text",
+          "name"        :"path",
+          "label"       :"链接"
+        },
+        {
+          "holder"      :"text",
+          "name"        :"order",
+          "label"       :"排序"
+        },
+        {
+          "holder"      :"radio",
+          "name"        :"display",
+          "label"       :"可见",
+          "options": [
+            {
+    					"label"   :"显示",
+    					"value"   :1
+    				},{
+    					"label"   :"隐藏",
+    					"value"   :0
+    				}
+          ]
+        }
+  	  ],
+  	  "rules": {
+  	    "name": [
+  	      { "required": true, "message": "请输入菜单名称", "trigger": "blur" },
+  	      { "min": 3, "max": 20, "message": "长度在 3 到 20 个字符", "trigger": "blur" }
+  	    ],
+  	    "category": [],
+  	    "subject":  [],
+  	    "content":  []
+  	  },
+      "labelWidth" :"100px",
+      "next": "/data/menu.txt",
+      "url" : "http://localhost:3000/menus",
+      "method":"POST"
+  },
+  "title" : "表单中心",
+  "view" : "Formor"
+}

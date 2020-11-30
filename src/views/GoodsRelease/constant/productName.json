@@ -1,0 +1,512 @@
+[
+  {
+    "parent_value": "0",
+    "value": "1",
+    "label": "电镀主盐",
+    "unit": "",
+    "children": [
+      {
+        "parent_value": "1",
+        "value": "110",
+        "label": "硫酸铜",
+        "unit": "KG"
+      },
+      {
+        "parent_value": "1",
+        "value": "111",
+        "label": "碱式碳酸铜",
+        "unit": "KG"
+      },
+      {
+        "parent_value": "1",
+        "value": "112",
+        "label": "焦磷酸铜",
+        "unit": "KG"
+      },
+      {
+        "parent_value": "1",
+        "value": "113",
+        "label": "硫酸镍",
+        "unit": "KG"
+      },
+      {
+        "parent_value": "1",
+        "value": "114",
+        "label": "氯化镍",
+        "unit": "KG"
+      },
+      {
+        "parent_value": "1",
+        "value": "115",
+        "label": "硝酸镍",
+        "unit": "KG"
+      },
+      {
+        "parent_value": "1",
+        "value": "116",
+        "label": "重铬酸钾",
+        "unit": "KG"
+      },
+      {
+        "parent_value": "1",
+        "value": "117",
+        "label": "铬酐",
+        "unit": "KG"
+      },
+      {
+        "parent_value": "1",
+        "value": "118",
+        "label": "氧化锌",
+        "unit": "KG"
+      },
+      {
+        "parent_value": "1",
+        "value": "119",
+        "label": "氯化锌",
+        "unit": "KG"
+      },
+      {
+        "parent_value": "1",
+        "value": "120",
+        "label": "硫酸锌",
+        "unit": "KG"
+      },
+      {
+        "parent_value": "1",
+        "value": "121",
+        "label": "氰化钾",
+        "unit": "KG"
+      },
+      {
+        "parent_value": "1",
+        "value": "122",
+        "label": "氰化钠",
+        "unit": "KG"
+      },
+      {
+        "parent_value": "1",
+        "value": "123",
+        "label": "氰化金钾",
+        "unit": "KG"
+      },
+      {
+        "parent_value": "1",
+        "value": "124",
+        "label": "氰化银钾",
+        "unit": "KG"
+      },
+      {
+        "parent_value": "1",
+        "value": "125",
+        "label": "钯盐",
+        "unit": "G"
+      },
+      {
+        "parent_value": "1",
+        "value": "126",
+        "label": "铑盐",
+        "unit": "G"
+      },
+      {
+        "parent_value": "1",
+        "value": "127",
+        "label": "钴盐",
+        "unit": "G"
+      },
+      {
+        "parent_value": "1",
+        "value": "128",
+        "label": "硼酸",
+        "unit": "KG"
+      },
+      {
+        "parent_value": "1",
+        "value": "129",
+        "label": "氯化钾",
+        "unit": "KG"
+      },
+      {
+        "parent_value": "1",
+        "value": "130",
+        "label": "氯化锌",
+        "unit": "KG"
+      }
+    ]
+  },
+  {
+    "parent_value": "0",
+    "value": "2",
+    "label": "电镀阳极（金属类）",
+    "unit": "",
+    "children": [
+      {
+        "parent_value": "2",
+        "value": "228",
+        "label": "磷铜",
+        "unit": "KG"
+      },
+      {
+        "parent_value": "2",
+        "value": "229",
+        "label": "电解铜",
+        "unit": "KG"
+      },
+      {
+        "parent_value": "2",
+        "value": "230",
+        "label": "镍",
+        "unit": "KG"
+      },
+      {
+        "parent_value": "2",
+        "value": "231",
+        "label": "铅板",
+        "unit": "KG"
+      },
+      {
+        "parent_value": "2",
+        "value": "232",
+        "label": "不锈钢板",
+        "unit": "KG"
+      },
+      {
+        "parent_value": "2",
+        "value": "233",
+        "label": "石墨板",
+        "unit": "KG"
+      },
+      {
+        "parent_value": "2",
+        "value": "234",
+        "label": "锌板",
+        "unit": "KG"
+      }
+    ]
+  },
+  {
+    "parent_value": "0",
+    "value": "3",
+    "label": "化工原料（酸碱类）",
+    "unit": "",
+    "children": [
+      {
+        "parent_value": "3",
+        "value": "334",
+        "label": "工业硫酸",
+        "unit": "KG"
+      },
+      {
+        "parent_value": "3",
+        "value": "335",
+        "label": "试剂硫酸",
+        "unit": "KG"
+      },
+      {
+        "parent_value": "3",
+        "value": "336",
+        "label": "工业盐酸",
+        "unit": "KG"
+      },
+      {
+        "parent_value": "3",
+        "value": "337",
+        "label": "试剂盐酸",
+        "unit": "KG"
+      },
+      {
+        "parent_value": "3",
+        "value": "338",
+        "label": "工业硝酸",
+        "unit": "KG"
+      },
+      {
+        "parent_value": "3",
+        "value": "339",
+        "label": "试剂硝酸",
+        "unit": "KG"
+      },
+      {
+        "parent_value": "3",
+        "value": "340",
+        "label": "氢氧化钠（烧碱）",
+        "unit": "KG"
+      },
+      {
+        "parent_value": "3",
+        "value": "341",
+        "label": "碳酸钠（纯碱）",
+        "unit": "KG"
+      },
+      {
+        "parent_value": "3",
+        "value": "342",
+        "label": "磷酸",
+        "unit": "KG"
+      },
+      {
+        "parent_value": "3",
+        "value": "343",
+        "label": "冰醋酸",
+        "unit": "KG"
+      },
+      {
+        "parent_value": "3",
+        "value": "344",
+        "label": "双氧水",
+        "unit": "KG"
+      },
+      {
+        "parent_value": "3",
+        "value": "345",
+        "label": "酒精",
+        "unit": "KG"
+      }
+    ]
+  },
+  {
+    "parent_value": "0",
+    "value": "4",
+    "label": "电镀添加剂及其它",
+    "unit": "",
+    "children": [
+      {
+        "parent_value": "4",
+        "value": "446",
+        "label": "除蜡粉",
+        "unit": "KG"
+      },
+      {
+        "parent_value": "4",
+        "value": "447",
+        "label": "除蜡水",
+        "unit": "KG"
+      },
+      {
+        "parent_value": "4",
+        "value": "448",
+        "label": "除油剂",
+        "unit": "KG"
+      },
+      {
+        "parent_value": "4",
+        "value": "449",
+        "label": "除油粉",
+        "unit": "KG"
+      },
+      {
+        "parent_value": "4",
+        "value": "450",
+        "label": "脱挂粉",
+        "unit": "KG"
+      },
+      {
+        "parent_value": "4",
+        "value": "451",
+        "label": "碳粉",
+        "unit": "KG"
+      },
+      {
+        "parent_value": "4",
+        "value": "452",
+        "label": "三氯已烯",
+        "unit": "KG"
+      },
+      {
+        "parent_value": "4",
+        "value": "453",
+        "label": "酸铜添加剂",
+        "unit": "KG"
+      },
+      {
+        "parent_value": "4",
+        "value": "454",
+        "label": "镀镍添加剂",
+        "unit": "KG"
+      },
+      {
+        "parent_value": "4",
+        "value": "455",
+        "label": "珍珠镍添加剂",
+        "unit": "KG"
+      },
+      {
+        "parent_value": "4",
+        "value": "456",
+        "label": "镀锌添加剂",
+        "unit": "KG"
+      },
+      {
+        "parent_value": "4",
+        "value": "457",
+        "label": "碱铜添加剂",
+        "unit": "KG"
+      },
+      {
+        "parent_value": "4",
+        "value": "458",
+        "label": "焦铜添加剂",
+        "unit": "KG"
+      },
+      {
+        "parent_value": "4",
+        "value": "459",
+        "label": "钝化剂",
+        "unit": "KG"
+      },
+      {
+        "parent_value": "4",
+        "value": "460",
+        "label": "封闭剂",
+        "unit": "KG"
+      },
+      {
+        "parent_value": "4",
+        "value": "461",
+        "label": "脱水剂",
+        "unit": "KG"
+      },
+      {
+        "parent_value": "4",
+        "value": "462",
+        "label": "封油油漆",
+        "unit": "KG"
+      }
+    ]
+  },
+  {
+    "parent_value": "0",
+    "value": "5",
+    "label": "劳保，包装材料",
+    "unit": "",
+    "children": [
+      {
+        "parent_value": "5",
+        "value": "563",
+        "label": "口罩",
+        "unit": "个"
+      },
+      {
+        "parent_value": "5",
+        "value": "564",
+        "label": "手套",
+        "unit": "对"
+      },
+      {
+        "parent_value": "5",
+        "value": "565",
+        "label": "雨鞋",
+        "unit": "对"
+      },
+      {
+        "parent_value": "5",
+        "value": "566",
+        "label": "防护服",
+        "unit": "套"
+      },
+      {
+        "parent_value": "5",
+        "value": "567",
+        "label": "指套",
+        "unit": "袋"
+      },
+      {
+        "parent_value": "5",
+        "value": "568",
+        "label": "围裙",
+        "unit": "条"
+      },
+      {
+        "parent_value": "5",
+        "value": "569",
+        "label": "护目镜",
+        "unit": "对"
+      },
+      {
+        "parent_value": "5",
+        "value": "570",
+        "label": "包装纸",
+        "unit": "令"
+      },
+      {
+        "parent_value": "5",
+        "value": "571",
+        "label": "包装袋",
+        "unit": "个"
+      },
+      {
+        "parent_value": "5",
+        "value": "572",
+        "label": "包装箱",
+        "unit": "个"
+      }
+    ]
+  },
+  {
+    "parent_value": "0",
+    "value": "6",
+    "label": "电镀设备及易耗品",
+    "unit": "",
+    "children": [
+      {
+        "parent_value": "6",
+        "value": "673",
+        "label": "电镀生产线总成",
+        "unit": "条"
+      },
+      {
+        "parent_value": "6",
+        "value": "674",
+        "label": "挂夹具",
+        "unit": "支"
+      },
+      {
+        "parent_value": "6",
+        "value": "675",
+        "label": "过滤机",
+        "unit": "台"
+      },
+      {
+        "parent_value": "6",
+        "value": "676",
+        "label": "滤芯",
+        "unit": "支"
+      },
+      {
+        "parent_value": "6",
+        "value": "677",
+        "label": "滤纸",
+        "unit": "张"
+      },
+      {
+        "parent_value": "6",
+        "value": "678",
+        "label": "电镀电源，整流机",
+        "unit": "台"
+      },
+      {
+        "parent_value": "6",
+        "value": "679",
+        "label": "超声波设备",
+        "unit": "台"
+      },
+      {
+        "parent_value": "6",
+        "value": "680",
+        "label": "纯水机",
+        "unit": "台"
+      },
+      {
+        "parent_value": "6",
+        "value": "681",
+        "label": "加热设备",
+        "unit": "台"
+      },
+      {
+        "parent_value": "6",
+        "value": "682",
+        "label": "冷却设备",
+        "unit": "台"
+      }
+    ]
+  }
+]

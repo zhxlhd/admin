@@ -1,0 +1,91 @@
+// 全局表单样式
+#dynamic-form{
+  /deep/ {
+    .el-form--inline>* {
+      margin-right:10px
+    }
+    .el-form--inline .el-form-item {
+      width:200px;
+      display: inline-block;
+      margin-right: 10px;
+      vertical-align: top;
+    }
+    .el-form-item.is-required .el-form-item__label:before{
+      content: '*';
+      color: #ff4949;
+      margin-right: 4px;
+    }
+    .el-cascader{
+      width:100%;
+    }
+    .el-select{
+      width:100%;
+    }
+    .hidden{
+      display:none;
+    }
+    .el-date-editor.el-input{
+      width:100%;
+    }
+    .el-form--inline.el-form--label-top .el-form-item__content{
+      width:90%
+    }
+    .el-form-item {
+      margin: 15px 20px 2px 0px;
+    }
+    .el-form-item--mini.el-form-item {
+      margin: 7px;
+    }
+    
+    .el-form-item__content .el-input-number {
+      width: 100%;
+    }
+    .el-form-item__content .el-input-number .el-input__inner {
+      text-align: left;
+    }
+    .el-form-item__content .el-input .el-input__inner {
+      padding-right: 55px;
+    }
+    .radioStyle .el-form-item__content{
+      height: 29px;
+    }
+    .el-checkbox-group {
+      margin-left: -120px;
+    }
+    .el-checkbox-group +.el-form-item__error {
+      margin-left: -120px;
+    }
+    .el-radio{
+      margin-right: 15px;
+    }
+    .my-form-item { 
+      position: relative;
+      .btn_close_fixed{
+        .el-input__suffix{
+          right: 35px;
+        }
+      } 
+      span.span-length { 
+        position: absolute;
+        right: 10px;
+        bottom: -5px;
+        color: #BEBEBE;
+        font-size: 12px;
+      }
+      span.span-err { 
+        position: absolute;
+        right: 2px;
+        bottom: -24px;
+        color: #F56C6C;
+        font-size: 12px;
+      }
+      span.span-length-text { 
+        position: absolute;
+        right: 3px;
+        bottom: -1px;
+        color: #BEBEBE;
+        font-size: 12px;
+      }
+    }
+  }
+}

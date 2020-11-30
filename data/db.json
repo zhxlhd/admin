@@ -1,0 +1,406 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "kuitos",
+      "location": "China"
+    },
+    {
+      "id": 2,
+      "name": "visiting-user",
+      "location": "UK"
+    },
+    {
+      "id": 3,
+      "username": "admin",
+      "password": "123456",
+      "avatar": "https://raw.githubusercontent.com/taylorchen709/markdown-images/master/vueadmin/user.png",
+      "name": "李艳芳",
+      "token": "def342ddfe222fdwaa"
+    },
+    {
+      "username": "admin",
+      "password": "7c4a8d09ca3762af61e59520943dc26494f8941b",
+      "token": "def342ddfe222fdwaa",
+      "id": 15
+    },
+    {
+      "username": "admin",
+      "password": "7c4a8d09ca3762af61e59520943dc26494f8941b",
+      "token": "def342ddfe222fdwaa",
+      "id": 16
+    },
+    {
+      "username": "admin",
+      "password": "7c4a8d09ca3762af61e59520943dc26494f8941b",
+      "token": "def342ddfe222fdwaa",
+      "id": 17
+    },
+    {
+      "username": "admin",
+      "password": "7c4a8d09ca3762af61e59520943dc26494f8941b",
+      "token": "def342ddfe222fdwaa",
+      "id": 18
+    }
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-mock",
+      "body": "The internet is 22cool!",
+      "author": "therebelrobot22",
+      "useId": 1
+    },
+    {
+      "id": 2,
+      "title": "wms",
+      "body": "The internet is wms!",
+      "author": "wms",
+      "useId": 1
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment from author",
+      "votes": 20,
+      "postId": 1,
+      "useId": 1
+    },
+    {
+      "id": 2,
+      "body": "some comment from visitor",
+      "votes": 15,
+      "postId": 1,
+      "useId": 2
+    }
+  ],
+  "menus": [
+    {
+      "parent": "basic",
+      "name": 3333,
+      "ename": "",
+      "icon": "",
+      "path": "",
+      "order": 10,
+      "display": "显示",
+      "id": 2
+    },
+    {
+      "parent": "basic",
+      "name": 2222,
+      "ename": "",
+      "icon": "",
+      "path": "",
+      "order": 10,
+      "display": 1,
+      "id": 3
+    },
+    {
+      "parent": "basic",
+      "name": 333,
+      "ename": "",
+      "icon": "",
+      "path": "",
+      "order": 10,
+      "display": 1,
+      "id": 4
+    },
+    {
+      "parent": "basic",
+      "name": 3455,
+      "ename": "",
+      "icon": "",
+      "path": "",
+      "order": 10,
+      "display": "显示",
+      "id": 5
+    },
+    {
+      "parent": "basic",
+      "name": 3455,
+      "ename": "",
+      "icon": "",
+      "path": "",
+      "order": 10,
+      "display": "显示",
+      "id": 6
+    },
+    {
+      "parent": "basic",
+      "name": 3455,
+      "ename": "",
+      "icon": "",
+      "path": "",
+      "order": 10,
+      "display": "显示",
+      "id": 7
+    },
+    {
+      "parent": "basic",
+      "name": 3455,
+      "ename": "",
+      "icon": "",
+      "path": "",
+      "order": 10,
+      "display": "显示",
+      "id": 8
+    },
+    {
+      "parent": "basic",
+      "name": 3333,
+      "ename": "",
+      "icon": "",
+      "path": "",
+      "order": 10,
+      "display": "显示",
+      "id": 9
+    },
+    {
+      "parent": "basic",
+      "name": 2344,
+      "ename": "",
+      "icon": "",
+      "path": "",
+      "order": 10,
+      "display": "显示",
+      "id": 10
+    },
+    {
+      "parent": "basic",
+      "name": 2344,
+      "ename": "",
+      "icon": "",
+      "path": "",
+      "order": 10,
+      "display": "显示",
+      "id": 12
+    },
+    {
+      "parent": "basic",
+      "name": 333,
+      "ename": "",
+      "icon": "",
+      "path": "",
+      "order": 10,
+      "display": 1,
+      "id": 13
+    },
+    {
+      "parent": "basic",
+      "name": 22222,
+      "ename": "",
+      "icon": "",
+      "path": "",
+      "order": 10,
+      "display": "显示",
+      "id": 14
+    },
+    {
+      "parent": "basic",
+      "name": 4321,
+      "ename": "",
+      "icon": "",
+      "path": "",
+      "order": 10,
+      "display": "显示",
+      "id": 15
+    },
+    {
+      "parent": "basic",
+      "name": 4321,
+      "ename": "",
+      "icon": "",
+      "path": "",
+      "order": 10,
+      "display": "显示",
+      "id": 16
+    },
+    {
+      "parent": "basic",
+      "name": 23444,
+      "ename": "",
+      "icon": "",
+      "path": "",
+      "order": 10,
+      "display": "显示",
+      "id": 17
+    },
+    {
+      "parent": "basic",
+      "name": 35667,
+      "ename": "",
+      "icon": "",
+      "path": "",
+      "order": 10,
+      "display": "显示",
+      "id": 18
+    },
+    {
+      "parent": "basic",
+      "name": 35667,
+      "ename": "",
+      "icon": "",
+      "path": "",
+      "order": 10,
+      "display": "显示",
+      "id": 19
+    },
+    {
+      "parent": "basic",
+      "name": 6543,
+      "ename": "",
+      "icon": "",
+      "path": "",
+      "order": 10,
+      "display": "显示",
+      "id": 20
+    },
+    {
+      "parent": "basic",
+      "name": 3211,
+      "ename": "",
+      "icon": "",
+      "path": "",
+      "order": 10,
+      "display": "显示",
+      "id": 24
+    },
+    {
+      "parent": "basic",
+      "name": 5432,
+      "ename": "",
+      "icon": "",
+      "path": "",
+      "order": 10,
+      "display": "显示",
+      "id": 25
+    },
+    {
+      "parent": "basic",
+      "name": 4321,
+      "ename": "",
+      "icon": "",
+      "path": "",
+      "order": 10,
+      "display": 1,
+      "id": 26
+    },
+    {
+      "parent": "basic",
+      "name": 322222,
+      "ename": "",
+      "icon": "",
+      "path": "",
+      "order": 10,
+      "display": "显示",
+      "id": 27
+    },
+    {
+      "parent": "basic",
+      "name": 2222222,
+      "ename": "",
+      "icon": "",
+      "path": "",
+      "order": 10,
+      "display": "显示",
+      "id": 28
+    },
+    {
+      "parent": "basic",
+      "name": 6654,
+      "ename": "",
+      "icon": "",
+      "path": "",
+      "order": 10,
+      "display": 1,
+      "id": 29
+    },
+    {
+      "parent": "basic",
+      "name": "2222",
+      "ename": "",
+      "icon": "",
+      "path": "",
+      "order": "10",
+      "display": "1",
+      "id": 30
+    }
+  ],
+  "menusA": [
+    {
+      "id": 1,
+      "label": "基础数据",
+      "path": "/data/table.txt",
+      "order": 10,
+      "display": "1",
+      "children": [
+        {
+          "id": 11,
+          "label": "物料管理",
+          "path": "/api/goods",
+          "order": 10,
+          "display": "1",
+          "children": [
+            {
+              "id": 21,
+              "label": "新增",
+              "path": "POST /api/goods",
+              "order": 10,
+              "display": "1"
+            },
+            {
+              "id": 22,
+              "label": "修改",
+              "path": "POST /api/goods/:id",
+              "order": 20,
+              "display": "1"
+            },
+            {
+              "id": 23,
+              "label": "删除",
+              "path": "DELETE /api/goods/:id",
+              "order": 20,
+              "display": "1"
+            }
+          ]
+        },
+        {
+          "id": 11,
+          "label": "仓库管理",
+          "path": "GET /api/dc",
+          "order": 10,
+          "display": "1",
+          "children": [
+            {
+              "id": 21,
+              "label": "新增",
+              "path": "POST /api/dc",
+              "order": 10,
+              "display": "1"
+            },
+            {
+              "id": 22,
+              "label": "修改",
+              "path": "POST /api/dc/:id",
+              "order": 20,
+              "display": "1"
+            },
+            {
+              "id": 23,
+              "label": "删除",
+              "path": "DELETE /api/dc/:id",
+              "order": 20,
+              "display": "1"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "tree": {
+    "name": "月",
+    "id": "",
+    "parent_id": 2
+  }
+}

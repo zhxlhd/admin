@@ -1,0 +1,142 @@
+{
+  "mate" : {
+     "columns" : [
+      {
+        "label":"区域编码",
+        "name" :"code",
+        "span":4
+      },
+      {
+        "label":"区域类型",
+        "name" :"type",
+        "span":4
+      },
+      {
+        "label":"备注",
+        "name" :"remark",
+        "span":4
+      }
+    ],
+    "rows": [
+    {
+        "id": 1,
+        "label": "中国",
+        "code":"100000",
+        "type":"国家",
+        "remark":"",
+        "sort": 1,
+        "children": [
+            {
+                "id": 11,
+                "label": "广东省",
+                "code":"110000",
+                "type":"省",
+                "remark":"",
+                "sort": 1,
+                "children": [
+                    {
+                        "id": 21,
+                        "label": "深圳市",
+                        "code":"112000",
+                        "type":"市",
+                        "remark":"中国.深圳",
+                        "sort": 1,
+                        "status": 1,
+                        "num": true
+                    },
+                    {
+                        "id": 22,
+                        "label": "广州市",
+                        "code":"111000",
+                        "type":"省会",
+                        "remark":"",
+                        "sort": 2,
+                        "status": 0,
+                        "children": [
+                            {
+                                "id": 21,
+                                "label": "增城区",
+                                "code":"111100",
+                                "type":"区",
+                                "remark":"",
+                                "sort": 1,
+                                "status": 1,
+                                "num": true
+                            },
+                            {
+                                "id": 22,
+                                "label": "灵秀区",
+                                "code":"111200",
+                                "type":"区",
+                                "remark":"",
+                                "sort": 2,
+                                "status": 0,
+                                "num": true
+                            }
+                        ]
+                    }
+                ],
+                "status": 1,
+                "num": true
+            }
+        ]
+    }
+],
+    "btns" :[
+        {
+    		"action"   : "add",
+    		"url"      : "/data/org-form.txt",
+    		"label"    : "添加",
+    		"type"     : "success",
+    		"isApi"    : false,
+    		"useId"    : -1
+    	},
+        {
+    		"action"   : "add",
+    		"url"      : "/data/org-form.txt",
+    		"label"    : "导入",
+    		"type"     : "success",
+    		"isApi"    : false,
+    		"useId"    : -1
+    	}
+    ],
+    "actions":[
+      {
+        "action"   :"add",
+        "url"      : "/data/form.txt",
+        "label"    : "修改",
+        "type"     : "",
+        "isApi"    : false,
+        "useId"    : 0
+      },
+      {
+        "action"   :"delete",
+        "confirm"  : {
+          "msg"    : "确定删除选中数据？"
+        },
+        "label"    : "删除",
+        "url"      : "/data/form.txt",
+        "type"     : "",
+        "isApi"    : true,
+        "useId"    : 0,
+        "canDisable"  : true,
+        "disableKey"   : "num"
+      },
+      {
+        "action"    :"addChild",
+        "url"       : "/data/form.txt",
+        "label"     : "添加下级区域",
+        "type"      : "",
+        "isApi"     : false,
+        "useId"     : 0
+      }
+    ],
+    "dataApi" : "/data",
+    "page"    : 1,
+    "total"   : 40,
+    "view":"tree",
+    "treeTitle":"机构名称"
+  },
+  "title": "机构管理",
+  "view" : "TreeList"
+}

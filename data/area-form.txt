@@ -1,0 +1,68 @@
+{
+  "mate" : {
+    	"values": {
+        "name": "",
+        "type": "",
+        "code": "",
+        "remark": "",
+        "pid": ""
+      },
+  		"fields" : [
+    		{
+    			"holder"      :"select",
+    			"name"        :"name",
+    			"label"       :"上级区域",
+    			"placeholder" :"选择上级区域"
+    		},
+    		{
+    			"holder"      :"text",
+    			"name"        :"name2",
+    			"label"       :"区域名称",
+    			"placeholder" :"请输入区域名称"
+    		},
+    		{
+    			"holder"      :"text",
+    			"name"        :"code",
+    			"label"       :"区域编码",
+    			"placeholder" :"区域编码"
+    		},
+    		{
+    			"holder"      :"select",
+    			"name"        :"type",
+    			"label"       :"区域类型",
+    			"options"     :[
+    				{
+    					"label"   :"国家",
+    					"value"   :"1"
+    				},{
+    					"label"   :"省份/直辖市",
+    					"value"   :"2"
+    				},
+						{
+    					"label"   :"地市",
+    					"value"   :"3"
+    				},{
+    					"label"   :"区县",
+    					"value"   :"4"
+    				}
+    			]
+    		},
+    		{
+    			"holder"      :"textarea",
+    			"name"        :"remark",
+    			"label"       :"备注"
+    		}
+  	  ],
+  	  "rules": {
+  	    "name": [
+  	      { "required": true, "message": "请输入区域名称", "trigger": "blur" }
+  	    ],
+  	    "code": [
+  	      { "required": true, "message": "请输入区域编码", "trigger": "change" }
+  	    ]
+  	  },
+      "labelWidth" :"100px"
+  },
+  "title" : "新增区域",
+  "view" : "FormDesign"
+}
